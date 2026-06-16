@@ -2,7 +2,7 @@
 // GitHub Pages note:
 // - If you set this to your public Pages URL, embed codes will always use it (recommended).
 // - If left empty, we fall back to the current origin + pathname.
-export const PRODUCTION_PAGES_URL = "";
+export const PRODUCTION_PAGES_URL = "https://careermedia.github.io/CareerJobWidgets";
 
 export function getBaseUrlForEmbeds(): string {
   const trimmed = PRODUCTION_PAGES_URL.trim();

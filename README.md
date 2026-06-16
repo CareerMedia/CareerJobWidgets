@@ -40,8 +40,17 @@ npm run preview
 
 This app uses `HashRouter`, so routes work on GitHub Pages without server rewrites.
 
-- **Project Pages base path**: set `VITE_BASE_PATH` to `"/CareerJobWidgets/"` (or your repo name) during build.
-- Output is static files in `dist/`.
+### Important: deploy the **built** `dist/` folder
+
+Do **not** publish the repo root as-is. The source `index.html` references `/src/main.tsx`, which only works in Vite dev — it will 404 on GitHub Pages and show a blank white page.
+
+### Recommended: GitHub Actions (included)
+
+1. In GitHub: **Settings → Pages → Build and deployment → Source** → choose **GitHub Actions**.
+2. Push to `main`. The workflow `.github/workflows/deploy-pages.yml` builds `dist/` and deploys it.
+3. Live URL: `https://careermedia.github.io/CareerJobWidgets/`
+
+Production builds use base path `"/CareerJobWidgets/"` (see `vite.config.ts`).
 
 ## Admin portal
 
