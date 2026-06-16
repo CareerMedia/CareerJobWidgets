@@ -29,7 +29,7 @@ export function JobsPage() {
         </Link>
       </div>
       <JobDirectoryWidget
-        title="Jobs"
+        title="Job Opportunities"
         feeds={jobsState.activeFeeds}
         jobs={jobsState.allJobs}
         selectedFeedId={selectedFeedId}

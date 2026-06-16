@@ -36,10 +36,6 @@ export function JobCard(props: { job: JobItem }) {
         <h3 className={styles.title}>{job.title}</h3>
         {job.employer ? <p className={styles.employer}>{job.employer}</p> : null}
 
-        <span className={styles.badge} aria-label={`Feed: ${job.feedName}`}>
-          {job.feedName}
-        </span>
-
         <ul className={styles.metaList}>
           {posted ? (
             <li>

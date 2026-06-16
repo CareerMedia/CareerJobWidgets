@@ -37,8 +37,6 @@ export function FeaturedJobCard(props: { job: JobItem }) {
       aria-label={`${job.title}${job.employer ? ` at ${job.employer}` : ""}`}
     >
       <div className={styles.inner}>
-        <span className={styles.feedBadge}>{job.feedName}</span>
-
         <div className={styles.titleRow}>
           <div className={styles.initials} aria-hidden="true">
             {getEmployerInitials(job.employer)}

@@ -23,7 +23,7 @@ export function EmbedAllJobsPage() {
   return (
     <EmbedLayout>
       <JobDirectoryWidget
-        title="Jobs"
+        title="Job Opportunities"
         feeds={jobsState.activeFeeds}
         jobs={jobsState.allJobs}
         selectedFeedId={selectedFeedId}

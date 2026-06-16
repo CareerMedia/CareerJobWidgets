@@ -69,7 +69,7 @@ export function JobDirectoryWidget(props: {
     return sortJobs(filtered, sort);
   }, [props.jobs, props.selectedFeedId, query, sort]);
 
-  const title = props.title ?? "Jobs";
+  const title = props.title ?? "Job Opportunities";
   const countLabel = props.isLoading
     ? "Loading jobs…"
     : `${visibleJobs.length.toLocaleString()} job${visibleJobs.length === 1 ? "" : "s"} found`;

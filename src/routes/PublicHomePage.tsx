@@ -63,7 +63,7 @@ export function PublicHomePage() {
         <main className={styles.main}>
           <div className={styles.section}>
             <JobDirectoryWidget
-              title="Jobs"
+              title="Job Opportunities"
               feeds={jobsState.activeFeeds}
               jobs={jobsState.allJobs}
               selectedFeedId={selectedFeedId}
