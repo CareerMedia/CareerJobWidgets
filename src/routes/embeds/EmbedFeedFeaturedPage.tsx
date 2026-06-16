@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useFeedConfigs } from "../../state/feedConfigs";
 import { useJobsForFeeds } from "../../state/jobs";
 import { EmbedLayout } from "../../components/layout/EmbedLayout";
-import { FeaturedJobsScroller } from "../../components/FeaturedJobsScroller";
+import { FeaturedJobsSection } from "../../components/FeaturedJobsSection";
 
 export function EmbedFeedFeaturedPage() {
   const { feedId } = useParams();
@@ -22,14 +22,14 @@ export function EmbedFeedFeaturedPage() {
   const isLoading = feed ? jobsState.byFeed[feed.id]?.status === "loading" : false;
 
   return (
-    <EmbedLayout background="white">
-      <FeaturedJobsScroller
-        title={feed ? `${feed.name} — Featured` : "Featured jobs"}
+    <EmbedLayout variant="featured">
+      <FeaturedJobsSection
         jobs={jobs}
+        feedId={feed?.id}
+        title={feed ? `${feed.name} — Featured Jobs` : "Available Jobs & Internships"}
         isLoading={Boolean(isLoading)}
         errorMessage={errorMessage}
       />
     </EmbedLayout>
   );
 }
-

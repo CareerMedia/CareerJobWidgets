@@ -21,9 +21,9 @@ export function EmbedAllJobsPage() {
   const isLoading = jobsState.activeFeeds.some((f) => jobsState.byFeed[f.id]?.status === "loading");
 
   return (
-    <EmbedLayout background="white">
+    <EmbedLayout>
       <JobDirectoryWidget
-        title="Jobs directory"
+        title="Jobs"
         feeds={jobsState.activeFeeds}
         jobs={jobsState.allJobs}
         selectedFeedId={selectedFeedId}

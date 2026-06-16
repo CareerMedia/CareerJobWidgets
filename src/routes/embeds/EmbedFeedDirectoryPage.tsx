@@ -22,7 +22,7 @@ export function EmbedFeedDirectoryPage() {
   const isLoading = feed ? jobsState.byFeed[feed.id]?.status === "loading" : false;
 
   return (
-    <EmbedLayout background="white">
+    <EmbedLayout>
       <JobDirectoryWidget
         title={feed ? `${feed.name} — Jobs` : "Jobs"}
         feeds={feed ? [feed] : []}

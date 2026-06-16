@@ -2,7 +2,7 @@ import React from "react";
 import { useFeedConfigs } from "../../state/feedConfigs";
 import { useJobsForFeeds } from "../../state/jobs";
 import { EmbedLayout } from "../../components/layout/EmbedLayout";
-import { FeaturedJobsScroller } from "../../components/FeaturedJobsScroller";
+import { FeaturedJobsSection } from "../../components/FeaturedJobsSection";
 
 export function EmbedFeaturedJobsPage() {
   const { feeds } = useFeedConfigs();
@@ -20,9 +20,8 @@ export function EmbedFeaturedJobsPage() {
   const isLoading = jobsState.activeFeeds.some((f) => jobsState.byFeed[f.id]?.status === "loading");
 
   return (
-    <EmbedLayout background="white">
-      <FeaturedJobsScroller title="Featured jobs" jobs={jobsState.allJobs} isLoading={isLoading} errorMessage={errorMessage} />
+    <EmbedLayout variant="featured">
+      <FeaturedJobsSection jobs={jobsState.allJobs} isLoading={isLoading} errorMessage={errorMessage} />
     </EmbedLayout>
   );
 }
-

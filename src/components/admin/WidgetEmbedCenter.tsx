@@ -11,15 +11,15 @@ function buildEmbedConfigs(feeds: FeedConfig[]): EmbedConfig[] {
       label: "All jobs directory",
       description: "Main searchable directory combining all active feeds.",
       widgetType: "all-jobs",
-      recommendedHeight: 760,
+      recommendedHeight: 860,
       route: "embed/all-jobs",
     },
     {
       id: "featured_all",
-      label: "Featured jobs scroller",
-      description: "Polished horizontal featured cards using all active feeds.",
+      label: "Homepage Featured Jobs Section",
+      description: "Full-width featured jobs teaser with auto-scroll. Links to the full jobs page.",
       widgetType: "featured-jobs",
-      recommendedHeight: 520,
+      recommendedHeight: 420,
       route: "embed/featured-jobs",
     },
     {
@@ -27,7 +27,7 @@ function buildEmbedConfigs(feeds: FeedConfig[]): EmbedConfig[] {
       label: "Feed tabs widget",
       description: "Consolidated widget with feed chips and a searchable directory view.",
       widgetType: "feed-tabs",
-      recommendedHeight: 820,
+      recommendedHeight: 900,
       route: "embed/feed-tabs",
     },
   ];
@@ -39,16 +39,16 @@ function buildEmbedConfigs(feeds: FeedConfig[]): EmbedConfig[] {
       description: "Feed-specific searchable directory widget.",
       widgetType: "feed-directory",
       feedId: f.id,
-      recommendedHeight: 760,
+      recommendedHeight: 820,
       route: `embed/feed/${encodeURIComponent(f.id)}/directory`,
     },
     {
       id: `feat_${f.id}`,
-      label: `${f.name} — Featured`,
-      description: "Feed-specific featured jobs scroller widget.",
+      label: `${f.name} — Homepage Featured Jobs`,
+      description: "Feed-specific homepage featured jobs section with auto-scroll.",
       widgetType: "feed-featured",
       feedId: f.id,
-      recommendedHeight: 520,
+      recommendedHeight: 420,
       route: `embed/feed/${encodeURIComponent(f.id)}/featured`,
     },
   ]);
@@ -71,7 +71,10 @@ export function WidgetEmbedCenter(props: { feeds: FeedConfig[] }) {
       <div className={styles.list}>
         {configs.map((c) => {
           const code = generateIframeEmbedCode({
-            title: c.label,
+            title:
+              c.widgetType === "featured-jobs" || c.widgetType === "feed-featured"
+                ? "Available Jobs and Internships"
+                : c.label,
             route: c.route,
             height: c.recommendedHeight,
           });

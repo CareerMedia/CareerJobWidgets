@@ -15,6 +15,16 @@ export function getBaseUrlForEmbeds(): string {
   return base;
 }
 
+// Optional override for the "See All Jobs" button in the featured homepage widget.
+// If empty, defaults to [BASE_URL]/#/jobs
+export const PUBLIC_ALL_JOBS_URL = "";
+
+export function getAllJobsPageUrl(): string {
+  const custom = PUBLIC_ALL_JOBS_URL.trim();
+  if (custom) return custom;
+  return `${getBaseUrlForEmbeds()}/#/jobs`;
+}
+
 // Shared-password admin gate note:
 // This is *not* enterprise-grade security. Static hosting means anyone can view the JS bundle.
 // This gate is intended only as lightweight friction to prevent casual access.

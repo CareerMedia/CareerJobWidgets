@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useFeedConfigs } from "../state/feedConfigs";
 import { useJobsForFeeds } from "../state/jobs";
-import { FeaturedJobsScroller } from "../components/FeaturedJobsScroller";
+import { FeaturedJobsSection } from "../components/FeaturedJobsSection";
 import { FeedTabsWidget } from "../components/FeedTabsWidget";
 import { JobDirectoryWidget } from "../components/JobDirectoryWidget";
 import { Button } from "../components/ui/Button";
@@ -25,8 +25,9 @@ export function PublicHomePage() {
   const isLoading = jobsState.activeFeeds.some((f) => jobsState.byFeed[f.id]?.status === "loading");
 
   return (
-    <div className="container">
-      <header className={styles.hero}>
+    <>
+      <div className="container">
+        <header className={styles.hero}>
         <div>
           <div className={styles.kicker}>Career Center Widgets</div>
           <h1 className={styles.title}>Discover opportunities, anywhere.</h1>
@@ -54,34 +55,42 @@ export function PublicHomePage() {
           </ul>
         </div>
       </header>
+      </div>
 
-      <main className={styles.main}>
-        <FeaturedJobsScroller title="Featured jobs" jobs={jobsState.allJobs} isLoading={isLoading} errorMessage={errorMessage} />
+      <FeaturedJobsSection jobs={jobsState.allJobs} isLoading={isLoading} errorMessage={errorMessage} />
 
-        <div className={styles.section}>
-          <JobDirectoryWidget
-            title="All jobs directory"
-            feeds={jobsState.activeFeeds}
-            jobs={jobsState.allJobs}
-            selectedFeedId={selectedFeedId}
-            onSelectedFeedIdChange={setSelectedFeedId}
-            isLoading={isLoading}
-            errorMessage={errorMessage}
-          />
-        </div>
+      <div className="container">
+        <main className={styles.main}>
+          <div className={styles.section}>
+            <JobDirectoryWidget
+              title="Jobs"
+              feeds={jobsState.activeFeeds}
+              jobs={jobsState.allJobs}
+              selectedFeedId={selectedFeedId}
+              onSelectedFeedIdChange={setSelectedFeedId}
+              isLoading={isLoading}
+              errorMessage={errorMessage}
+            />
+          </div>
 
-        <div className={styles.section}>
-          <h2 className={styles.h2}>Feed tabs widget</h2>
-          <FeedTabsWidget feeds={jobsState.activeFeeds} jobs={jobsState.allJobs} isLoading={isLoading} errorMessage={errorMessage} />
-        </div>
-      </main>
+          <div className={styles.section}>
+            <h2 className={styles.h2}>Feed tabs widget</h2>
+            <FeedTabsWidget
+              feeds={jobsState.activeFeeds}
+              jobs={jobsState.allJobs}
+              isLoading={isLoading}
+              errorMessage={errorMessage}
+            />
+          </div>
+        </main>
 
-      <footer className={styles.footer}>
-        <span>Built for GitHub Pages.</span>
-        <span className={styles.dot} />
-        <a href="#/embed/all-jobs">Embeds</a>
-      </footer>
-    </div>
+        <footer className={styles.footer}>
+          <span>Built for GitHub Pages.</span>
+          <span className={styles.dot} />
+          <a href="#/embed/all-jobs">Embeds</a>
+        </footer>
+      </div>
+    </>
   );
 }
 

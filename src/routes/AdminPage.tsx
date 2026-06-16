@@ -160,7 +160,7 @@ export function AdminPage() {
                   generateIframeEmbedCode({
                     title: `${f.name} — Directory`,
                     route: `embed/feed/${encodeURIComponent(f.id)}/directory`,
-                    height: 760,
+                    height: 860,
                   }),
                 )
               }
@@ -169,7 +169,7 @@ export function AdminPage() {
                   generateIframeEmbedCode({
                     title: `${f.name} — Featured`,
                     route: `embed/feed/${encodeURIComponent(f.id)}/featured`,
-                    height: 520,
+                    height: 420,
                   }),
                 )
               }

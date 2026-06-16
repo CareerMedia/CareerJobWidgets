@@ -1,0 +1,65 @@
+.card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.accent {
+  height: 4px;
+  background: rgba(210, 32, 48, 0.15);
+}
+
+.body {
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.line,
+.pill,
+.btn {
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f0f0f0 0%, #fafafa 50%, #f0f0f0 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+.line {
+  height: 12px;
+}
+
+.title {
+  height: 18px;
+  width: 85%;
+}
+
+.short {
+  width: 55%;
+}
+
+.pill {
+  height: 22px;
+  width: 110px;
+  border-radius: 999px;
+}
+
+.block {
+  height: 48px;
+}
+
+.btn {
+  margin: 0 16px 16px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}

@@ -1,6 +1,7 @@
 .wrap {
   display: grid;
   gap: 14px;
+  background: transparent;
 }
 
 .chips {

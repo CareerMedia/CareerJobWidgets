@@ -2,6 +2,7 @@ import React from "react";
 import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { FeedConfigsProvider } from "../state/feedConfigs";
 import { PublicHomePage } from "./PublicHomePage";
+import { JobsPage } from "./JobsPage";
 import { AdminPage } from "./AdminPage";
 import { EmbedAllJobsPage } from "./embeds/EmbedAllJobsPage";
 import { EmbedFeaturedJobsPage } from "./embeds/EmbedFeaturedJobsPage";
@@ -15,6 +16,7 @@ export function App() {
       <HashRouter>
         <Routes>
           <Route path="/" element={<PublicHomePage />} />
+          <Route path="/jobs" element={<JobsPage />} />
           <Route path="/admin" element={<AdminPage />} />
 
           {/* Embed-only routes */}

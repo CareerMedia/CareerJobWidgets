@@ -39,6 +39,7 @@ export function FeedTabsWidget(props: {
         onSelectedFeedIdChange={setSelected}
         isLoading={props.isLoading}
         errorMessage={props.errorMessage}
+        showFeedFilter={false}
       />
     </section>
   );
