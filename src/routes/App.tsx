@@ -1,0 +1,33 @@
+import React from "react";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { FeedConfigsProvider } from "../state/feedConfigs";
+import { PublicHomePage } from "./PublicHomePage";
+import { AdminPage } from "./AdminPage";
+import { EmbedAllJobsPage } from "./embeds/EmbedAllJobsPage";
+import { EmbedFeaturedJobsPage } from "./embeds/EmbedFeaturedJobsPage";
+import { EmbedFeedTabsPage } from "./embeds/EmbedFeedTabsPage";
+import { EmbedFeedDirectoryPage } from "./embeds/EmbedFeedDirectoryPage";
+import { EmbedFeedFeaturedPage } from "./embeds/EmbedFeedFeaturedPage";
+
+export function App() {
+  return (
+    <FeedConfigsProvider>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<PublicHomePage />} />
+          <Route path="/admin" element={<AdminPage />} />
+
+          {/* Embed-only routes */}
+          <Route path="/embed/all-jobs" element={<EmbedAllJobsPage />} />
+          <Route path="/embed/featured-jobs" element={<EmbedFeaturedJobsPage />} />
+          <Route path="/embed/feed-tabs" element={<EmbedFeedTabsPage />} />
+          <Route path="/embed/feed/:feedId/directory" element={<EmbedFeedDirectoryPage />} />
+          <Route path="/embed/feed/:feedId/featured" element={<EmbedFeedFeaturedPage />} />
+
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </HashRouter>
+    </FeedConfigsProvider>
+  );
+}
+

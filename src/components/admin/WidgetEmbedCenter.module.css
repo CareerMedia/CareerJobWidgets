@@ -1,0 +1,30 @@
+.wrap {
+  display: grid;
+  gap: 12px;
+}
+
+.header {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.title {
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.micro {
+  margin: 8px 0 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+}
+

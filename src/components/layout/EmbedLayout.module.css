@@ -1,0 +1,13 @@
+.root {
+  min-height: 100vh;
+  padding: 14px;
+}
+
+.white {
+  background: #fff;
+}
+
+.transparent {
+  background: transparent;
+}
+

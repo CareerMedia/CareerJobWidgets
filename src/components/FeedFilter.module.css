@@ -1,0 +1,24 @@
+.wrap {
+  display: grid;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--muted);
+}
+
+.select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 12px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.select:focus-visible {
+  border-color: rgba(210, 32, 48, 0.5);
+}
+

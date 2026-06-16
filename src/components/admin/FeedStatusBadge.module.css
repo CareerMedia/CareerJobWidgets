@@ -1,0 +1,29 @@
+.badge {
+  font-size: 12px;
+  font-weight: 750;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--muted);
+  text-transform: capitalize;
+}
+
+.unchecked {
+  background: #fff;
+}
+.loading {
+  background: rgba(16, 24, 40, 0.06);
+  color: #2b2f36;
+}
+.working {
+  background: rgba(0, 140, 80, 0.10);
+  border-color: rgba(0, 140, 80, 0.25);
+  color: #00643a;
+}
+.error {
+  background: rgba(210, 32, 48, 0.08);
+  border-color: rgba(210, 32, 48, 0.25);
+  color: #7a0f18;
+}
+
