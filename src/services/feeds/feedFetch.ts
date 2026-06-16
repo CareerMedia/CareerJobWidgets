@@ -21,7 +21,7 @@ export async function fetchFeedText(feed: FeedConfig, signal?: AbortSignal): Pro
         error: {
           kind: "cors",
           message:
-            "This feed may block browser-based fetching (CORS). Many RSS/JSON sources do not allow requests from GitHub Pages origins. Try a source that supports CORS, or host the feed somewhere that allows it.",
+            "This feed blocks browser-based fetching (CORS). Handshake RSS feeds are a common example. The app will try a bundled cache generated at deploy time if this feed is listed in feeds.sync.json.",
         },
       };
     }
