@@ -24,3 +24,7 @@ export const ADMIN_SESSION_KEY = "cjw_admin_authed_v1";
 // To change: hash a new password with sha256Base64() in src/services/security/passwordGate.ts.
 export const ADMIN_PASSWORD_SHA256_BASE64 = "oEEUDbqIMbRkVhmG54UIC3+gdYugM/CPbMVKapscIvo=";
 
+// GitHub repo used for the "Sync feeds" admin action (server-side feed refresh workflow).
+export const GITHUB_REPO_SLUG = "CareerMedia/CareerJobWidgets";
+export const SYNC_FEEDS_WORKFLOW_URL = `https://github.com/${GITHUB_REPO_SLUG}/actions/workflows/sync-feeds.yml`;
+

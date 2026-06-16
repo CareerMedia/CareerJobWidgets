@@ -1,22 +1,47 @@
 import type { FeedConfig, FeedFetchError, FeedType, JobItem } from "../../types/models";
-import { fetchFeedText } from "./feedFetch";
 import { fetchBundledJobs } from "./feedBundled";
+import { fetchFeedText } from "./feedFetch";
+import { isHandshakeFeedUrl } from "./feedUrl";
 import { parseJsonToJobs } from "./jsonParse";
 import { parseRssToJobs } from "./rssParse";
 
-export async function fetchAndParseFeed(feed: FeedConfig, signal?: AbortSignal): Promise<
+function remapJobsForFeed(jobs: JobItem[], feed: FeedConfig): JobItem[] {
+  return jobs.map((job) => ({
+    ...job,
+    feedId: feed.id,
+    feedName: feed.name,
+  }));
+}
+
+export async function fetchAndParseFeed(
+  feed: FeedConfig,
+  signal?: AbortSignal,
+): Promise<
   | { ok: true; jobs: JobItem[]; fromCache?: boolean; cacheSyncedAt?: string }
   | { ok: false; error: FeedFetchError }
 > {
+  // Handshake blocks browser CORS — use bundled JSON cache first (no failed network request).
+  if (isHandshakeFeedUrl(feed.url)) {
+    const bundled = await fetchBundledJobs(feed);
+    if (bundled.ok) {
+      return {
+        ok: true,
+        jobs: remapJobsForFeed(bundled.jobs, feed),
+        fromCache: true,
+        cacheSyncedAt: bundled.syncedAt,
+      };
+    }
+    return { ok: false, error: bundled.error };
+  }
+
   const res = await fetchFeedText(feed, signal);
   if (!res.ok) {
-    // Handshake and similar feeds block browser fetches — fall back to build-time JSON cache.
     if (res.error.kind === "cors" || res.error.kind === "network") {
       const bundled = await fetchBundledJobs(feed);
       if (bundled.ok) {
         return {
           ok: true,
-          jobs: bundled.jobs,
+          jobs: remapJobsForFeed(bundled.jobs, feed),
           fromCache: true,
           cacheSyncedAt: bundled.syncedAt,
         };
@@ -53,4 +78,3 @@ function detectType(configured: FeedType, bodyText: string): Exclude<FeedType, "
   if (t.startsWith("<")) return "rss";
   return "json";
 }
-

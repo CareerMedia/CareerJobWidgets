@@ -1,9 +1,13 @@
 import type { FeedConfig, FeedFetchError, JobItem } from "../../types/models";
+import { handshakeFeedKey, normalizeFeedUrl } from "./feedUrl";
 
 type BundledManifest = {
   syncedAt?: string;
   urlIndex?: Record<string, string>;
+  normalizedUrlIndex?: Record<string, string>;
+  handshakeFeedIndex?: Record<string, string>;
   idIndex?: Record<string, string>;
+  feeds?: Record<string, { url: string; file: string; jobCount: number }>;
 };
 
 type BundledFeedFile = {
@@ -11,6 +15,34 @@ type BundledFeedFile = {
   syncedAt?: string;
   jobs: JobItem[];
 };
+
+function resolveCacheFile(manifest: BundledManifest, feed: FeedConfig): string | undefined {
+  const candidates = [
+    manifest.urlIndex?.[feed.url],
+    manifest.normalizedUrlIndex?.[normalizeFeedUrl(feed.url)],
+    manifest.idIndex?.[feed.id],
+  ];
+  for (const c of candidates) {
+    if (c) return c;
+  }
+
+  const hsKey = handshakeFeedKey(feed.url);
+  if (hsKey && manifest.handshakeFeedIndex?.[hsKey]) {
+    return manifest.handshakeFeedIndex[hsKey];
+  }
+
+  // Last resort: match any manifest feed with the same Handshake external_feeds id.
+  if (manifest.feeds) {
+    const targetKey = handshakeFeedKey(feed.url);
+    if (targetKey) {
+      for (const entry of Object.values(manifest.feeds)) {
+        if (handshakeFeedKey(entry.url) === targetKey) return entry.file;
+      }
+    }
+  }
+
+  return undefined;
+}
 
 /**
  * GitHub Pages note:
@@ -29,20 +61,20 @@ export async function fetchBundledJobs(
         error: {
           kind: "network",
           message:
-            "No bundled feed cache found on this site. For CORS-blocked feeds (like Handshake), run the feed sync step during deploy.",
+            "No bundled feed cache found on this site. Run the Sync Feeds GitHub Action or redeploy after adding the feed to feeds.sync.json.",
         },
       };
     }
 
     const manifest = (await manifestRes.json()) as BundledManifest;
-    const file = manifest.urlIndex?.[feed.url] ?? manifest.idIndex?.[feed.id];
+    const file = resolveCacheFile(manifest, feed);
     if (!file) {
       return {
         ok: false,
         error: {
           kind: "cors",
           message:
-            "This feed blocks browser fetching (CORS), and it is not in the bundled cache yet. Add it to feeds.sync.json and redeploy.",
+            "This feed is not in the bundled cache yet. Add it to feeds.sync.json, then run Sync Feeds in GitHub Actions.",
         },
       };
     }
@@ -64,5 +96,16 @@ export async function fetchBundledJobs(
   } catch (err) {
     const msg = err instanceof Error ? err.message : "Unknown error";
     return { ok: false, error: { kind: "unknown", message: msg } };
+  }
+}
+
+export async function fetchBundledManifest(): Promise<BundledManifest | null> {
+  const base = import.meta.env.BASE_URL;
+  try {
+    const res = await fetch(`${base}data/feeds/manifest.json`);
+    if (!res.ok) return null;
+    return (await res.json()) as BundledManifest;
+  } catch {
+    return null;
   }
 }

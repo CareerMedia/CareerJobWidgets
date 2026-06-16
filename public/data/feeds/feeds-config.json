@@ -1,10 +1,10 @@
 {
+  "syncedAt": "2026-06-16T16:09:07.796Z",
   "feeds": [
     {
       "id": "csun_amc_handshake",
       "name": "Mike Curb College of Arts, Media, & Communication",
       "url": "https://csun.joinhandshake.com/external_feeds/26754/public.rss?token=n9iGisvAtXtehJcIWugM6l7fhrB0uCybdZCduhyKr5_tDBIPt2OcYA",
-      "urlEnv": "HANDSHAKE_CSUN_AMC_FEED_URL",
       "type": "rss",
       "description": "CSUN Handshake external RSS feed (synced at build time because Handshake blocks browser CORS).",
       "category": "CSUN / CAM",

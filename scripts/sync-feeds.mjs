@@ -14,6 +14,21 @@ const ROOT = path.resolve(__dirname, "..");
 const CONFIG_PATH = path.join(ROOT, "feeds.sync.json");
 const OUT_DIR = path.join(ROOT, "public", "data", "feeds");
 
+function normalizeFeedUrl(url) {
+  try {
+    const u = new URL(String(url).trim());
+    u.hash = "";
+    return u.href;
+  } catch {
+    return String(url).trim();
+  }
+}
+
+function handshakeFeedKey(url) {
+  const m = String(url).match(/external_feeds\/(\d+)/i);
+  return m?.[1] ? `handshake_feed_${m[1]}` : undefined;
+}
+
 function stripHtml(input) {
   return input
     .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
@@ -141,8 +156,12 @@ async function main() {
     syncedAt: new Date().toISOString(),
     feeds: {},
     urlIndex: {},
+    normalizedUrlIndex: {},
+    handshakeFeedIndex: {},
     idIndex: {},
   };
+
+  const feedsConfig = [];
 
   for (const feed of feeds) {
     const url = feed.urlEnv ? process.env[feed.urlEnv] || feed.url : feed.url;
@@ -168,11 +187,28 @@ async function main() {
 
     manifest.feeds[feed.id] = { url, file: fileName, jobCount: jobs.length, type };
     manifest.urlIndex[url] = fileName;
+    manifest.normalizedUrlIndex[normalizeFeedUrl(url)] = fileName;
+    const hsKey = handshakeFeedKey(url);
+    if (hsKey) manifest.handshakeFeedIndex[hsKey] = fileName;
     manifest.idIndex[feed.id] = fileName;
+    feedsConfig.push({
+      id: feed.id,
+      name: feed.name,
+      url,
+      type: feed.type ?? "rss",
+      description: feed.description,
+      category: feed.category,
+      active: feed.active !== false,
+    });
     console.log(`  → ${jobs.length} jobs → ${fileName}`);
   }
 
   await fs.writeFile(path.join(OUT_DIR, "manifest.json"), JSON.stringify(manifest, null, 2), "utf8");
+  await fs.writeFile(
+    path.join(OUT_DIR, "feeds-config.json"),
+    JSON.stringify({ syncedAt: manifest.syncedAt, feeds: feedsConfig }, null, 2),
+    "utf8",
+  );
   console.log(`Wrote manifest with ${Object.keys(manifest.feeds).length} feed(s).`);
 }
 

@@ -8,6 +8,7 @@ import { AdminLogin } from "../components/admin/AdminLogin";
 import { FeedForm } from "../components/admin/FeedForm";
 import { FeedList } from "../components/admin/FeedList";
 import { WidgetEmbedCenter } from "../components/admin/WidgetEmbedCenter";
+import { FeedSyncPanel } from "../components/admin/FeedSyncPanel";
 import { Button } from "../components/ui/Button";
 import { generateIframeEmbedCode } from "../services/embeds/embedCode";
 import styles from "./AdminPage.module.css";
@@ -87,12 +88,15 @@ export function AdminPage() {
       </div>
 
       {tab === "feeds" ? (
-        <div className={styles.grid}>
-          <div className={styles.panel}>
-            <h1 className={styles.h1}>Feeds</h1>
-            <p className={styles.micro}>
-              Configs persist in <code>localStorage</code>. If a feed fails due to CORS, the browser can’t bypass it on GitHub Pages.
-            </p>
+        <div className={styles.stack}>
+          <FeedSyncPanel />
+
+          <div className={styles.grid}>
+            <div className={styles.panel}>
+              <h1 className={styles.h1}>Feeds</h1>
+              <p className={styles.micro}>
+                Configs persist in <code>localStorage</code>. Handshake feeds load from the synced JSON cache (see above).
+              </p>
 
             <div className={styles.actionsRow}>
               <Button
@@ -171,6 +175,7 @@ export function AdminPage() {
               }
             />
           </div>
+        </div>
         </div>
       ) : (
         <WidgetEmbedCenter feeds={feeds} />

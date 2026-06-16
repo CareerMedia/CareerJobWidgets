@@ -2,6 +2,7 @@ import React from "react";
 import type { FeedConfig } from "../types/models";
 import { feedStorage } from "../services/storage/feedStorage";
 import { createId } from "../services/utils/ids";
+import { loadBundledFeedConfigs, mergeBundledFeeds } from "../services/feeds/bundledFeedConfig";
 
 const DEFAULT_FEEDS: FeedConfig[] = [
   {
@@ -39,6 +40,19 @@ export function FeedConfigsProvider(props: { children: React.ReactNode }) {
     feedStorage.save(DEFAULT_FEEDS);
     return DEFAULT_FEEDS;
   });
+
+  // Merge feeds shipped with the synced JSON cache (feeds.sync.json → feeds-config.json).
+  React.useEffect(() => {
+    void (async () => {
+      const bundled = await loadBundledFeedConfigs();
+      if (bundled.length === 0) return;
+      setFeedsState((current) => {
+        const next = mergeBundledFeeds(current, bundled);
+        feedStorage.save(next);
+        return next;
+      });
+    })();
+  }, []);
 
   const setFeeds = React.useCallback((next: FeedConfig[]) => {
     setFeedsState(next);
