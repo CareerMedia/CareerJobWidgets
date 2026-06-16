@@ -20,7 +20,7 @@ export function EmbedFeaturedJobsPage() {
   const isLoading = jobsState.activeFeeds.some((f) => jobsState.byFeed[f.id]?.status === "loading");
 
   return (
-    <EmbedLayout variant="featured">
+    <EmbedLayout>
       <FeaturedJobsSection jobs={jobsState.allJobs} isLoading={isLoading} errorMessage={errorMessage} />
     </EmbedLayout>
   );

@@ -4,12 +4,7 @@ html.embed-mode body,
 html.embed-mode #root {
   background: transparent !important;
   margin: 0;
-}
-
-/* Featured jobs embed: light gray section fills the iframe area only. */
-html.embed-featured-mode,
-html.embed-featured-mode body,
-html.embed-featured-mode #root {
-  background: #f5f5f5 !important;
-  margin: 0;
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 0 !important;
 }

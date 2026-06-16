@@ -22,7 +22,7 @@ export function EmbedFeedFeaturedPage() {
   const isLoading = feed ? jobsState.byFeed[feed.id]?.status === "loading" : false;
 
   return (
-    <EmbedLayout variant="featured">
+    <EmbedLayout>
       <FeaturedJobsSection
         jobs={jobs}
         feedId={feed?.id}

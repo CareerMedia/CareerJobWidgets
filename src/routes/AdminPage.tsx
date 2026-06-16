@@ -9,8 +9,10 @@ import { FeedForm } from "../components/admin/FeedForm";
 import { FeedList } from "../components/admin/FeedList";
 import { WidgetEmbedCenter } from "../components/admin/WidgetEmbedCenter";
 import { FeedSyncPanel } from "../components/admin/FeedSyncPanel";
+import { WidgetSettingsPanel } from "../components/admin/WidgetSettingsPanel";
 import { Button } from "../components/ui/Button";
 import { generateIframeEmbedCode } from "../services/embeds/embedCode";
+import { EMBED_HEIGHT_DIRECTORY_PAGE, EMBED_HEIGHT_FEATURED } from "../services/embeds/embedHeights";
 import styles from "./AdminPage.module.css";
 
 type FeedStatusState = { status: FeedCheckStatus; error?: FeedFetchError };
@@ -90,6 +92,7 @@ export function AdminPage() {
       {tab === "feeds" ? (
         <div className={styles.stack}>
           <FeedSyncPanel />
+          <WidgetSettingsPanel />
 
           <div className={styles.grid}>
             <div className={styles.panel}>
@@ -160,7 +163,7 @@ export function AdminPage() {
                   generateIframeEmbedCode({
                     title: `${f.name} — Directory`,
                     route: `embed/feed/${encodeURIComponent(f.id)}/directory`,
-                    height: 860,
+                    height: EMBED_HEIGHT_DIRECTORY_PAGE,
                   }),
                 )
               }
@@ -169,7 +172,7 @@ export function AdminPage() {
                   generateIframeEmbedCode({
                     title: `${f.name} — Featured`,
                     route: `embed/feed/${encodeURIComponent(f.id)}/featured`,
-                    height: 420,
+                    height: EMBED_HEIGHT_FEATURED,
                   }),
                 )
               }

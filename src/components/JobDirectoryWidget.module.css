@@ -210,6 +210,68 @@
   line-height: 1.5;
 }
 
+.pageMeta {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+.pageList {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pageBtn,
+.pageNum {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.pageBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pageNum {
+  min-width: 38px;
+  text-align: center;
+}
+
+.pageNumActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.pageBtn:focus-visible,
+.pageNum:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(210, 32, 48, 0.25);
+}
+
+.ellipsis {
+  color: var(--muted);
+  padding: 0 4px;
+}
+
 .srOnly {
   position: absolute;
   width: 1px;

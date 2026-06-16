@@ -1,6 +1,6 @@
 import React from "react";
 import type { JobItem } from "../types/models";
-import { getAllJobsPageUrl } from "../config/appConfig";
+import { useWidgetSettings } from "../state/widgetSettings";
 import { FeaturedJobCard } from "./FeaturedJobCard";
 import styles from "./FeaturedJobsSection.module.css";
 
@@ -61,9 +61,10 @@ export function FeaturedJobsSection(props: {
   isLoading?: boolean;
   errorMessage?: string;
 }) {
+  const { allJobsUrl: settingsUrl } = useWidgetSettings();
   const title = props.title ?? "Available Jobs & Internships";
   const subtitle = props.subtitle ?? "Explore opportunities curated from our career feeds.";
-  const allJobsUrl = props.allJobsUrl ?? getAllJobsPageUrl();
+  const allJobsUrl = props.allJobsUrl ?? settingsUrl;
   const autoScrollEnabled = props.autoScroll !== false;
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -85,7 +86,8 @@ export function FeaturedJobsSection(props: {
     [sourceJobs],
   );
 
-  const shouldAnimate = autoScrollEnabled && !prefersReducedMotion && sourceJobs.length > cardsVisible;
+  const canScroll = sourceJobs.length > cardsVisible;
+  const shouldAnimate = autoScrollEnabled && !prefersReducedMotion && canScroll;
   const displayItems = shouldAnimate ? loopItems : sourceJobs;
 
   const scrollByCards = (direction: -1 | 1) => {
@@ -163,7 +165,7 @@ export function FeaturedJobsSection(props: {
           <div className={styles.empty}>No featured jobs available right now.</div>
         ) : (
           <div className={styles.carousel}>
-            {(prefersReducedMotion || !shouldAnimate) && (
+            {canScroll ? (
               <>
                 <button
                   type="button"
@@ -182,10 +184,7 @@ export function FeaturedJobsSection(props: {
                   ›
                 </button>
               </>
-            )}
-
-            <div className={styles.fadeLeft} aria-hidden="true" />
-            <div className={styles.fadeRight} aria-hidden="true" />
+            ) : null}
 
             <div
               ref={viewportRef}

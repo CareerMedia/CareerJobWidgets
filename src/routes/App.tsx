@@ -1,6 +1,7 @@
 import React from "react";
 import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { FeedConfigsProvider } from "../state/feedConfigs";
+import { WidgetSettingsProvider } from "../state/widgetSettings";
 import { PublicHomePage } from "./PublicHomePage";
 import { JobsPage } from "./JobsPage";
 import { AdminPage } from "./AdminPage";
@@ -12,7 +13,8 @@ import { EmbedFeedFeaturedPage } from "./embeds/EmbedFeedFeaturedPage";
 
 export function App() {
   return (
-    <FeedConfigsProvider>
+    <WidgetSettingsProvider>
+      <FeedConfigsProvider>
       <HashRouter>
         <Routes>
           <Route path="/" element={<PublicHomePage />} />
@@ -29,7 +31,8 @@ export function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </HashRouter>
-    </FeedConfigsProvider>
+      </FeedConfigsProvider>
+    </WidgetSettingsProvider>
   );
 }
 

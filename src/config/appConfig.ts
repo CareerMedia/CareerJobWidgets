@@ -15,7 +15,8 @@ export function getBaseUrlForEmbeds(): string {
   return base;
 }
 
-// Optional override for the "See All Jobs" button in the featured homepage widget.
+// Build-time fallback for the "See All Jobs" button (featured widget).
+// Prefer Admin → Widget settings, or public/data/widget-settings.json for runtime config.
 // If empty, defaults to [BASE_URL]/#/jobs
 export const PUBLIC_ALL_JOBS_URL = "";
 

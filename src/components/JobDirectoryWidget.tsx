@@ -1,5 +1,6 @@
 import React from "react";
 import type { FeedConfig, JobItem } from "../types/models";
+import { JOBS_PER_PAGE } from "../services/embeds/embedHeights";
 import { parseExpiresAt } from "../services/utils/text";
 import { JobCard } from "./JobCard";
 import { JobCardSkeleton } from "./JobCardSkeleton";
@@ -48,6 +49,12 @@ function SearchIcon() {
   );
 }
 
+function pageNumbers(current: number, total: number): number[] {
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+  const pages = new Set<number>([1, total, current, current - 1, current + 1]);
+  return [...pages].filter((p) => p >= 1 && p <= total).sort((a, b) => a - b);
+}
+
 export function JobDirectoryWidget(props: {
   title?: string;
   feeds: FeedConfig[];
@@ -57,10 +64,13 @@ export function JobDirectoryWidget(props: {
   isLoading: boolean;
   errorMessage?: string;
   showFeedFilter?: boolean;
+  pageSize?: number;
 }) {
   const [query, setQuery] = React.useState("");
   const [sort, setSort] = React.useState<SortOption>("newest");
+  const [page, setPage] = React.useState(1);
   const showFeedFilter = props.showFeedFilter !== false;
+  const pageSize = props.pageSize ?? JOBS_PER_PAGE;
 
   const visibleJobs = React.useMemo(() => {
     const filtered = props.jobs
@@ -68,6 +78,22 @@ export function JobDirectoryWidget(props: {
       .filter((j) => matches(j, query));
     return sortJobs(filtered, sort);
   }, [props.jobs, props.selectedFeedId, query, sort]);
+
+  const totalPages = Math.max(1, Math.ceil(visibleJobs.length / pageSize));
+  const safePage = Math.min(page, totalPages);
+
+  React.useEffect(() => {
+    setPage(1);
+  }, [query, sort, props.selectedFeedId, props.jobs.length]);
+
+  React.useEffect(() => {
+    if (page !== safePage) setPage(safePage);
+  }, [page, safePage]);
+
+  const pageJobs = React.useMemo(() => {
+    const start = (safePage - 1) * pageSize;
+    return visibleJobs.slice(start, start + pageSize);
+  }, [visibleJobs, safePage, pageSize]);
 
   const title = props.title ?? "Job Opportunities";
   const countLabel = props.isLoading
@@ -82,6 +108,8 @@ export function JobDirectoryWidget(props: {
   const onSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   };
+
+  const pages = pageNumbers(safePage, totalPages);
 
   return (
     <section className={styles.wrap} aria-label={title}>
@@ -112,6 +140,12 @@ export function JobDirectoryWidget(props: {
         <div className={styles.toolbar}>
           <p className={styles.count} aria-live="polite">
             {countLabel}
+            {!props.isLoading && visibleJobs.length > 0 ? (
+              <span className={styles.pageMeta}>
+                {" "}
+                · Page {safePage} of {totalPages}
+              </span>
+            ) : null}
           </p>
 
           <div className={styles.sortWrap}>
@@ -169,11 +203,55 @@ export function JobDirectoryWidget(props: {
           <p>No jobs found. Try adjusting your search or filters.</p>
         </div>
       ) : (
-        <div className={styles.grid}>
-          {visibleJobs.map((job) => (
-            <JobCard key={`${job.feedId}:${job.id}`} job={job} />
-          ))}
-        </div>
+        <>
+          <div className={styles.grid}>
+            {pageJobs.map((job) => (
+              <JobCard key={`${job.feedId}:${job.id}`} job={job} />
+            ))}
+          </div>
+
+          {totalPages > 1 ? (
+            <nav className={styles.pagination} aria-label="Job results pages">
+              <button
+                type="button"
+                className={styles.pageBtn}
+                disabled={safePage <= 1}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+              >
+                Previous
+              </button>
+              <div className={styles.pageList}>
+                {pages.map((p, idx) => {
+                  const prev = pages[idx - 1];
+                  const gap = prev !== undefined && p - prev > 1;
+                  return (
+                    <React.Fragment key={p}>
+                      {gap ? <span className={styles.ellipsis}>…</span> : null}
+                      <button
+                        type="button"
+                        className={[styles.pageNum, p === safePage ? styles.pageNumActive : ""]
+                          .filter(Boolean)
+                          .join(" ")}
+                        aria-current={p === safePage ? "page" : undefined}
+                        onClick={() => setPage(p)}
+                      >
+                        {p}
+                      </button>
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+              <button
+                type="button"
+                className={styles.pageBtn}
+                disabled={safePage >= totalPages}
+                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+              >
+                Next
+              </button>
+            </nav>
+          ) : null}
+        </>
       )}
     </section>
   );

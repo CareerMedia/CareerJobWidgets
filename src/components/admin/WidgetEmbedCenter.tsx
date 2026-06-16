@@ -1,6 +1,11 @@
 import React from "react";
 import type { EmbedConfig, FeedConfig } from "../../types/models";
 import { generateIframeEmbedCode } from "../../services/embeds/embedCode";
+import {
+  EMBED_HEIGHT_DIRECTORY_PAGE,
+  EMBED_HEIGHT_FEATURED,
+  EMBED_HEIGHT_FEED_TABS_PAGE,
+} from "../../services/embeds/embedHeights";
 import { EmbedCodeCard } from "./EmbedCodeCard";
 import styles from "./WidgetEmbedCenter.module.css";
 
@@ -9,25 +14,25 @@ function buildEmbedConfigs(feeds: FeedConfig[]): EmbedConfig[] {
     {
       id: "all_jobs",
       label: "All jobs directory",
-      description: "Main searchable directory combining all active feeds.",
+      description: "Searchable directory with pagination (40 jobs per page). Include embed.js for auto-height iframes.",
       widgetType: "all-jobs",
-      recommendedHeight: 860,
+      recommendedHeight: EMBED_HEIGHT_DIRECTORY_PAGE,
       route: "embed/all-jobs",
     },
     {
       id: "featured_all",
       label: "Homepage Featured Jobs Section",
-      description: "Full-width featured jobs teaser with auto-scroll. Links to the full jobs page.",
+      description: "Auto-scrolling featured job carousel. Transparent background. Include embed.js for auto-height iframes.",
       widgetType: "featured-jobs",
-      recommendedHeight: 420,
+      recommendedHeight: EMBED_HEIGHT_FEATURED,
       route: "embed/featured-jobs",
     },
     {
       id: "feed_tabs",
       label: "Feed tabs widget",
-      description: "Consolidated widget with feed chips and a searchable directory view.",
+      description: "Feed chips with paginated directory view (40 jobs per page).",
       widgetType: "feed-tabs",
-      recommendedHeight: 900,
+      recommendedHeight: EMBED_HEIGHT_FEED_TABS_PAGE,
       route: "embed/feed-tabs",
     },
   ];
@@ -39,16 +44,16 @@ function buildEmbedConfigs(feeds: FeedConfig[]): EmbedConfig[] {
       description: "Feed-specific searchable directory widget.",
       widgetType: "feed-directory",
       feedId: f.id,
-      recommendedHeight: 820,
+      recommendedHeight: EMBED_HEIGHT_DIRECTORY_PAGE,
       route: `embed/feed/${encodeURIComponent(f.id)}/directory`,
     },
     {
       id: `feat_${f.id}`,
       label: `${f.name} — Homepage Featured Jobs`,
-      description: "Feed-specific homepage featured jobs section with auto-scroll.",
+      description: "Feed-specific auto-scrolling featured jobs carousel.",
       widgetType: "feed-featured",
       feedId: f.id,
-      recommendedHeight: 420,
+      recommendedHeight: EMBED_HEIGHT_FEATURED,
       route: `embed/feed/${encodeURIComponent(f.id)}/featured`,
     },
   ]);

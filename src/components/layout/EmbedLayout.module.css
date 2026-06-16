@@ -1,12 +1,9 @@
 .root {
-  min-height: 100vh;
-  padding: 0;
+  padding: 12px 10px;
+  background: transparent;
+  overflow: visible;
 }
 
 .transparent {
   background: transparent;
-}
-
-.featured {
-  background: #f5f5f5;
 }
