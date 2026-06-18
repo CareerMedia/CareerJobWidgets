@@ -1,10 +1,10 @@
 {
-  "syncedAt": "2026-06-17T16:50:03.402Z",
+  "syncedAt": "2026-06-18T16:48:38.853Z",
   "feeds": {
     "csun_amc_handshake": {
       "url": "https://csun.joinhandshake.com/external_feeds/26754/public.rss?token=n9iGisvAtXtehJcIWugM6l7fhrB0uCybdZCduhyKr5_tDBIPt2OcYA",
       "file": "csun_amc_handshake.json",
-      "jobCount": 43,
+      "jobCount": 38,
       "type": "rss"
     }
   },
