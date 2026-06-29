@@ -1,6 +1,6 @@
 {
   "feedId": "handshake_feed_26770",
-  "syncedAt": "2026-06-29T16:58:07.844Z",
+  "syncedAt": "2026-06-29T17:06:09.413Z",
   "jobs": [
     {
       "id": "gid://handshake/Job/10810500",
@@ -1885,6 +1885,18 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/26770/public.rss?token=m20Ufg9siDUJyS8dF0-25IQoRntdkP5nytU1zpqOwMKBsY9mjbORvQ",
       "employer": "University of Arkansas - University Libraries",
       "expiresAt": "07/29/2026"
+    },
+    {
+      "id": "gid://handshake/Job/11166242",
+      "feedId": "handshake_feed_26770",
+      "feedName": "Science & Mathematics",
+      "title": "Project ACORN Urban Forestry Intern at Akron Zoological Park",
+      "description": "Employer: Akron Zoological Park Expires: 07/30/2026 Job Description:We are seeking an enthusiastic and dedicated Urban Forestry Intern to join our team. This is a unique opportunity to gain hands-on experience planting and caring for trees and plants. The paid 8-week internship offers weekly classroom time, hands-on tree and plant care, and certification in pesticide application. Dates: August 31, 2026-October 22, 2026, Mondays- Thursdays 8:00 am- 3:30 p.m.Pay: $18-20 an hour. Key Responsibilities:Assist in tree care tasks, including planting, pruning, transplanting, and removing trees and plants, while adhering to safety protocols. Help with landscape maintenance, including planting, watering, mulching, weeding, and fertilizing plant beds. Learn to identify tree and plants, common tree and plant diseases, and assist in plant inventory and data management. Assist with monitoring and reporting on the health of trees and plants, as well as overall landscape conditions. Maintain and clean equipment and tools used in tree and plant care operations. Qualifications: Must be 18 years old and live in Akron city limits High School Diploma/GED or willing to obtain Must be available during scheduled hours A strong interest in trees, plants, and sustainable landscape management. Physical capability to lift, carry, climb, and perform manual labor tasks in varying weather conditions. Willingness to learn and follow safety guidelines. Strong attention to detail and good communication skills. Ability to work independently and as part of a team. Preferred Qualifications:Familiarity with common landscaping tools NON-DISCRIMINATION STATEMENT: The USDA, the City of Akron and the Akron Zoo are equal opportunity providers.",
+      "pubDate": "Mon, 29 Jun 2026 16:45:10 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11166242/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/26770/public.rss?token=m20Ufg9siDUJyS8dF0-25IQoRntdkP5nytU1zpqOwMKBsY9mjbORvQ",
+      "employer": "Akron Zoological Park",
+      "expiresAt": "07/30/2026"
     },
     {
       "id": "gid://handshake/Job/10706040",

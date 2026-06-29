@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-29T16:58:07.844Z",
+  "syncedAt": "2026-06-29T17:06:09.413Z",
   "feeds": [
     {
       "id": "csun_amc_handshake",
@@ -49,6 +49,13 @@
       "id": "handshake_feed_26770",
       "name": "Science & Mathematics",
       "url": "https://csun.joinhandshake.com/external_feeds/26770/public.rss?token=m20Ufg9siDUJyS8dF0-25IQoRntdkP5nytU1zpqOwMKBsY9mjbORvQ",
+      "type": "rss",
+      "active": true
+    },
+    {
+      "id": "handshake_feed_26769",
+      "name": "Social & Behavioral Sciences",
+      "url": "https://csun.joinhandshake.com/external_feeds/26769/public.rss?token=1tQG5vlNUJQb0JXLjaWzPQmasYU_CEzlmrxHKYdAZ2xCMXScK65AEw",
       "type": "rss",
       "active": true
     }
