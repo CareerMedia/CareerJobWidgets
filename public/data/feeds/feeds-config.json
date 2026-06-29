@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-29T15:58:52.104Z",
+  "syncedAt": "2026-06-29T16:16:20.659Z",
   "feeds": [
     {
       "id": "csun_amc_handshake",
@@ -8,6 +8,13 @@
       "type": "rss",
       "description": "CSUN Handshake external RSS feed (synced at build time because Handshake blocks browser CORS).",
       "category": "CSUN / CAM",
+      "active": true
+    },
+    {
+      "id": "handshake_feed_26778",
+      "name": "David Nazarian College of Business & Economics",
+      "url": "https://csun.joinhandshake.com/external_feeds/26778/public.rss?token=i3TqKs_sa3Y8ZKaTQaI75N1a5kTaq9TJZ1A2Lpj7VkZvGFCIRroQOQ",
+      "type": "rss",
       "active": true
     }
   ]
