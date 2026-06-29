@@ -1,4 +1,5 @@
 import type { FeedConfig, FeedFetchError, JobItem } from "../../types/models";
+import { fetchBestFeedJson, fetchFeedCacheFile } from "./feedDataSources";
 import { handshakeFeedKey, normalizeFeedUrl } from "./feedUrl";
 
 type BundledManifest = {
@@ -31,7 +32,6 @@ function resolveCacheFile(manifest: BundledManifest, feed: FeedConfig): string |
     return manifest.handshakeFeedIndex[hsKey];
   }
 
-  // Last resort: match any manifest feed with the same Handshake external_feeds id.
   if (manifest.feeds) {
     const targetKey = handshakeFeedKey(feed.url);
     if (targetKey) {
@@ -45,51 +45,45 @@ function resolveCacheFile(manifest: BundledManifest, feed: FeedConfig): string |
 }
 
 /**
- * GitHub Pages note:
- * Handshake and many RSS hosts do not send CORS headers. Browsers cannot fetch them directly.
- * We ship a same-origin JSON cache generated at build time (see scripts/sync-feeds.mjs).
+ * Handshake and many RSS hosts block browser CORS.
+ * Job data is loaded from the repo cache (and deployed site when available).
  */
 export async function fetchBundledJobs(
   feed: FeedConfig,
 ): Promise<{ ok: true; jobs: JobItem[]; syncedAt?: string } | { ok: false; error: FeedFetchError }> {
-  const base = import.meta.env.BASE_URL;
   try {
-    const manifestRes = await fetch(`${base}data/feeds/manifest.json`);
-    if (!manifestRes.ok) {
+    const manifest = await fetchBestFeedJson<BundledManifest>("manifest.json", true);
+    if (!manifest) {
       return {
         ok: false,
         error: {
           kind: "network",
-          message:
-            "No bundled feed cache found on this site. Run the Sync Feeds GitHub Action or redeploy after adding the feed to feeds.sync.json.",
+          message: "No feed cache found yet. Save the feed in admin and wait for sync to finish.",
         },
       };
     }
 
-    const manifest = (await manifestRes.json()) as BundledManifest;
     const file = resolveCacheFile(manifest, feed);
     if (!file) {
       return {
         ok: false,
         error: {
           kind: "cors",
-          message:
-            "This feed is still syncing. Wait about a minute after saving, then refresh. If it persists, check GitHub Actions.",
+          message: "This feed is still syncing. Wait a moment and try Test again.",
         },
       };
     }
 
-    const jobsRes = await fetch(`${base}data/feeds/${file}`);
-    if (!jobsRes.ok) {
+    const payload = await fetchFeedCacheFile<BundledFeedFile>(file, true);
+    if (!payload) {
       return {
         ok: false,
-        error: { kind: "network", message: `Bundled cache file missing: ${file}` },
+        error: { kind: "network", message: `Feed cache file missing: ${file}` },
       };
     }
 
-    const payload = (await jobsRes.json()) as BundledFeedFile;
     if (!Array.isArray(payload.jobs)) {
-      return { ok: false, error: { kind: "parse", message: "Bundled cache file is invalid." } };
+      return { ok: false, error: { kind: "parse", message: "Feed cache file is invalid." } };
     }
 
     return { ok: true, jobs: payload.jobs, syncedAt: payload.syncedAt ?? manifest.syncedAt };
@@ -100,12 +94,5 @@ export async function fetchBundledJobs(
 }
 
 export async function fetchBundledManifest(): Promise<BundledManifest | null> {
-  const base = import.meta.env.BASE_URL;
-  try {
-    const res = await fetch(`${base}data/feeds/manifest.json`);
-    if (!res.ok) return null;
-    return (await res.json()) as BundledManifest;
-  } catch {
-    return null;
-  }
+  return fetchBestFeedJson<BundledManifest>("manifest.json", true);
 }

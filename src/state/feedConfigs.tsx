@@ -3,6 +3,7 @@ import type { FeedConfig } from "../types/models";
 import { feedStorage } from "../services/storage/feedStorage";
 import { createId } from "../services/utils/ids";
 import { loadBundledFeedConfigs } from "../services/feeds/bundledFeedConfig";
+import { mergeBundledFeeds } from "../services/feeds/bundledFeedMerge";
 import { finalizeFeedConfig, toSyncPayload } from "../services/feeds/feedId";
 import { saveFeedToRepo, waitForFeedInCache } from "../services/github/feedRepoSync";
 import { githubTokenStorage } from "../services/github/githubTokenStorage";
@@ -35,13 +36,11 @@ export function FeedConfigsProvider(props: { children: React.ReactNode }) {
 
   const refreshFeeds = React.useCallback(async () => {
     const bundled = await loadBundledFeedConfigs(true);
-    if (bundled.length > 0) {
-      setFeedsState(bundled);
-      feedStorage.save(bundled);
-      return;
-    }
-    const local = feedStorage.load();
-    setFeedsState(local);
+    setFeedsState((current) => {
+      const next = mergeBundledFeeds(current, bundled);
+      feedStorage.save(next);
+      return next;
+    });
   }, []);
 
   React.useEffect(() => {
@@ -65,13 +64,13 @@ export function FeedConfigsProvider(props: { children: React.ReactNode }) {
       setSyncState({ busy: true, message: action === "delete" ? "Removing feed…" : "Saving feed to GitHub…" });
       try {
         await saveFeedToRepo(action, toSyncPayload(feed), token);
-        setSyncState({ busy: true, message: "Syncing feed data (this takes about a minute)…" });
+        setSyncState({ busy: true, message: "Updating feed list…" });
         const ready = await waitForFeedInCache(feed.id);
         await refreshFeeds();
-        if (!ready && action === "upsert" && feed.active) {
+        if (!ready && action === "upsert") {
           setSyncState({
             busy: false,
-            message: "Feed saved. Job data is still syncing — refresh in a minute if jobs don’t appear yet.",
+            message: "Feed saved to GitHub. Job data may take another minute — click Test to check.",
           });
           return;
         }

@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: admin-save-feed
@@ -65,3 +66,14 @@ jobs:
             git commit -m "chore: admin feed save (${{ inputs.action }})"
             git push
           fi
+
+      - name: Trigger Pages deploy
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy-pages.yml',
+              ref: 'main',
+            });

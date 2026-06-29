@@ -54,6 +54,54 @@ export async function dispatchWorkflow(
   throw new GitHubApiError(await readErrorMessage(res), res.status);
 }
 
+type WorkflowRun = {
+  id: number;
+  status: string;
+  conclusion: string | null;
+  created_at: string;
+};
+
+/** Wait for the most recent workflow_dispatch run started after `startedAfter`. */
+export async function waitForWorkflowSuccess(
+  workflowFile: string,
+  token: string,
+  startedAfter: Date,
+  timeoutMs = 300_000,
+): Promise<"success" | "failure" | "timeout"> {
+  const start = Date.now();
+  let runId: number | null = null;
+
+  while (Date.now() - start < timeoutMs) {
+    const res = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO_SLUG}/actions/workflows/${workflowFile}/runs?event=workflow_dispatch&per_page=5`,
+      { headers: headers(token) },
+    );
+    if (res.ok) {
+      const data = (await res.json()) as { workflow_runs?: WorkflowRun[] };
+      const run = data.workflow_runs?.find((r) => new Date(r.created_at) >= startedAfter);
+      if (run) {
+        runId = run.id;
+        if (run.status === "completed") {
+          return run.conclusion === "success" ? "success" : "failure";
+        }
+      }
+    }
+    await new Promise((r) => window.setTimeout(r, 4000));
+  }
+
+  if (runId) {
+    const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO_SLUG}/actions/runs/${runId}`, {
+      headers: headers(token),
+    });
+    if (res.ok) {
+      const run = (await res.json()) as WorkflowRun;
+      if (run.status === "completed") return run.conclusion === "success" ? "success" : "failure";
+    }
+  }
+
+  return "timeout";
+}
+
 type ContentsResponse = {
   sha: string;
   content?: string;
