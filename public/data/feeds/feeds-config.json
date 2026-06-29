@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-29T16:16:20.659Z",
+  "syncedAt": "2026-06-29T16:38:03.975Z",
   "feeds": [
     {
       "id": "csun_amc_handshake",
@@ -14,6 +14,13 @@
       "id": "handshake_feed_26778",
       "name": "David Nazarian College of Business & Economics",
       "url": "https://csun.joinhandshake.com/external_feeds/26778/public.rss?token=i3TqKs_sa3Y8ZKaTQaI75N1a5kTaq9TJZ1A2Lpj7VkZvGFCIRroQOQ",
+      "type": "rss",
+      "active": true
+    },
+    {
+      "id": "handshake_feed_26773",
+      "name": "Michael D. Eisner College of Education",
+      "url": "https://csun.joinhandshake.com/external_feeds/26773/public.rss?token=GbzBRWl3hVQ8Lr7IrHTKI_9OjhpbbIAY7kz5hhH4OCt824gxVAWOYA",
       "type": "rss",
       "active": true
     }
