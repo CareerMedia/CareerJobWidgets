@@ -1,10 +1,9 @@
 import React from "react";
-import { SYNC_FEEDS_WORKFLOW_URL } from "../../config/appConfig";
 import { fetchBundledManifest } from "../../services/feeds/feedBundled";
 import { Button } from "../ui/Button";
 import styles from "./FeedSyncPanel.module.css";
 
-export function FeedSyncPanel() {
+export function FeedSyncPanel(props: { onRefreshFeeds?: () => void }) {
   const [manifest, setManifest] = React.useState<Awaited<ReturnType<typeof fetchBundledManifest>>>(null);
   const [loading, setLoading] = React.useState(true);
 
@@ -12,7 +11,8 @@ export function FeedSyncPanel() {
     setLoading(true);
     setManifest(await fetchBundledManifest());
     setLoading(false);
-  }, []);
+    props.onRefreshFeeds?.();
+  }, [props.onRefreshFeeds]);
 
   React.useEffect(() => {
     void refresh();
@@ -30,20 +30,15 @@ export function FeedSyncPanel() {
     <section className={styles.panel}>
       <div className={styles.header}>
         <div>
-          <h2 className={styles.title}>Feed sync (Handshake / CORS-blocked feeds)</h2>
+          <h2 className={styles.title}>Feed sync status</h2>
           <p className={styles.micro}>
-            Handshake RSS feeds cannot be fetched directly in the browser. A GitHub Action pulls them server-side and
-            saves JSON to <code>public/data/feeds/</code> in this repo. The site loads that cache automatically.
+            When you save a feed, GitHub Actions fetches the jobs server-side and updates the site automatically. No
+            manual <code>feeds.sync.json</code> editing required.
           </p>
         </div>
-        <div className={styles.actions}>
-          <Button type="button" variant="ghost" onClick={() => void refresh()}>
-            Refresh status
-          </Button>
-          <a className={styles.syncBtn} href={SYNC_FEEDS_WORKFLOW_URL} target="_blank" rel="noopener noreferrer">
-            Sync feeds now
-          </a>
-        </div>
+        <Button type="button" variant="ghost" onClick={() => void refresh()}>
+          Refresh status
+        </Button>
       </div>
 
       <div className={styles.meta}>
@@ -66,16 +61,8 @@ export function FeedSyncPanel() {
           ))}
         </ul>
       ) : (
-        <p className={styles.micro}>
-          No cached feeds found yet. Add feeds to <code>feeds.sync.json</code>, then click <strong>Sync feeds now</strong>{" "}
-          and run the workflow.
-        </p>
+        <p className={styles.micro}>No cached feeds yet. Add a feed above after connecting GitHub.</p>
       )}
-
-      <p className={styles.hint}>
-        After syncing, GitHub Actions commits the JSON and redeploys the site. Daily sync runs automatically at 6:00 AM
-        Pacific.
-      </p>
     </section>
   );
 }

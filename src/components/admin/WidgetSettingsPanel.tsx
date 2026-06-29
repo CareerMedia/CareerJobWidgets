@@ -1,13 +1,14 @@
 import React from "react";
 import { getAllJobsPageUrl } from "../../config/appConfig";
 import { useWidgetSettings } from "../../state/widgetSettings";
+import { githubTokenStorage } from "../../services/github/githubTokenStorage";
 import { Button } from "../ui/Button";
 import styles from "./WidgetSettingsPanel.module.css";
 
 export function WidgetSettingsPanel() {
-  const { settings, bundled, allJobsUrl, setAllJobsUrl, resetAllJobsUrl } = useWidgetSettings();
+  const { settings, bundled, allJobsUrl, setAllJobsUrl, resetAllJobsUrl, syncState } = useWidgetSettings();
   const [draft, setDraft] = React.useState(settings.allJobsUrl);
-  const [copied, setCopied] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setDraft(settings.allJobsUrl);
@@ -15,16 +16,15 @@ export function WidgetSettingsPanel() {
 
   const defaultUrl = getAllJobsPageUrl();
   const siteDefault = bundled.allJobsUrl.trim() || defaultUrl;
+  const hasGitHub = Boolean(githubTokenStorage.load());
 
-  const onSave = () => {
-    setAllJobsUrl(draft.trim());
-  };
-
-  const onCopyDeployJson = async () => {
-    const json = JSON.stringify({ allJobsUrl: draft.trim() }, null, 2);
-    await navigator.clipboard.writeText(json);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 2000);
+  const onSave = async () => {
+    setError(null);
+    try {
+      await setAllJobsUrl(draft.trim());
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to save settings.");
+    }
   };
 
   return (
@@ -33,9 +33,8 @@ export function WidgetSettingsPanel() {
         <div>
           <h2 className={styles.title}>Widget settings</h2>
           <p className={styles.micro}>
-            Configure the <strong>See All Jobs</strong> button in the featured jobs widget. Saved here applies in this
-            browser immediately. For all visitors and embeds, copy the site config JSON into{" "}
-            <code>public/data/widget-settings.json</code> and deploy.
+            Configure the <strong>See All Jobs</strong> button in the featured jobs widget. Saves to GitHub when
+            connected, so it applies everywhere.
           </p>
         </div>
       </div>
@@ -44,7 +43,7 @@ export function WidgetSettingsPanel() {
         className={styles.form}
         onSubmit={(e) => {
           e.preventDefault();
-          onSave();
+          void onSave();
         }}
       >
         <label className={styles.label}>
@@ -66,13 +65,15 @@ export function WidgetSettingsPanel() {
           Effective URL: <a href={allJobsUrl}>{allJobsUrl}</a>
         </p>
 
+        {error ? <p className={styles.error}>{error}</p> : null}
+        {syncState.message ? <p className={styles.saved}>{syncState.message}</p> : null}
+
         <div className={styles.actions}>
-          <Button type="submit">Save (this browser)</Button>
-          <Button type="button" variant="ghost" onClick={() => resetAllJobsUrl()}>
-            Reset to site default
+          <Button type="submit" disabled={syncState.busy}>
+            {syncState.busy ? "Saving…" : hasGitHub ? "Save to GitHub" : "Save (connect GitHub to sync)"}
           </Button>
-          <Button type="button" variant="ghost" onClick={() => void onCopyDeployJson()}>
-            {copied ? "Copied!" : "Copy site config JSON"}
+          <Button type="button" variant="ghost" onClick={() => resetAllJobsUrl()} disabled={syncState.busy}>
+            Reset to site default
           </Button>
         </div>
       </form>

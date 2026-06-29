@@ -9,10 +9,11 @@ type BundledFeedsConfigFile = {
 };
 
 /** Load feed definitions shipped with the synced JSON cache (from feeds.sync.json). */
-export async function loadBundledFeedConfigs(): Promise<FeedConfig[]> {
+export async function loadBundledFeedConfigs(cacheBust = false): Promise<FeedConfig[]> {
   const base = import.meta.env.BASE_URL;
+  const suffix = cacheBust ? `?t=${Date.now()}` : "";
   try {
-    const res = await fetch(`${base}data/feeds/feeds-config.json`);
+    const res = await fetch(`${base}data/feeds/feeds-config.json${suffix}`);
     if (!res.ok) return [];
     const data = (await res.json()) as BundledFeedsConfigFile;
     if (!Array.isArray(data.feeds)) return [];

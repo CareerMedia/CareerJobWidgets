@@ -64,3 +64,15 @@
   gap: 8px;
   padding-top: 4px;
 }
+
+.error {
+  margin: 0;
+  color: #991b1b;
+  font-size: 13px;
+}
+
+.saved {
+  margin: 0;
+  color: #15803d;
+  font-size: 13px;
+}

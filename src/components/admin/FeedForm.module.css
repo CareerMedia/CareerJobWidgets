@@ -34,6 +34,23 @@
   resize: vertical;
 }
 
+.hint {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--muted, #64748b);
+  line-height: 1.45;
+}
+
+.advanced {
+  font-size: 0.875rem;
+}
+
+.advancedBody {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+
 .actions {
   display: flex;
   gap: 10px;

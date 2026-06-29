@@ -38,4 +38,5 @@ export const ADMIN_PASSWORD_SHA256_BASE64 = "oEEUDbqIMbRkVhmG54UIC3+gdYugM/CPbMV
 // GitHub repo used for the "Sync feeds" admin action (server-side feed refresh workflow).
 export const GITHUB_REPO_SLUG = "CareerMedia/CareerJobWidgets";
 export const SYNC_FEEDS_WORKFLOW_URL = `https://github.com/${GITHUB_REPO_SLUG}/actions/workflows/sync-feeds.yml`;
+export const ADMIN_SAVE_FEED_WORKFLOW_URL = `https://github.com/${GITHUB_REPO_SLUG}/actions/workflows/admin-save-feed.yml`;
 

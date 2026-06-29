@@ -74,7 +74,7 @@ export async function fetchBundledJobs(
         error: {
           kind: "cors",
           message:
-            "This feed is not in the bundled cache yet. Add it to feeds.sync.json, then run Sync Feeds in GitHub Actions.",
+            "This feed is still syncing. Wait about a minute after saving, then refresh. If it persists, check GitHub Actions.",
         },
       };
     }

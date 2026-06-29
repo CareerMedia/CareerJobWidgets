@@ -9,6 +9,7 @@ import { FeedForm } from "../components/admin/FeedForm";
 import { FeedList } from "../components/admin/FeedList";
 import { WidgetEmbedCenter } from "../components/admin/WidgetEmbedCenter";
 import { FeedSyncPanel } from "../components/admin/FeedSyncPanel";
+import { GitHubConnectPanel } from "../components/admin/GitHubConnectPanel";
 import { WidgetSettingsPanel } from "../components/admin/WidgetSettingsPanel";
 import { Button } from "../components/ui/Button";
 import { generateIframeEmbedCode } from "../services/embeds/embedCode";
@@ -19,12 +20,14 @@ type FeedStatusState = { status: FeedCheckStatus; error?: FeedFetchError };
 
 export function AdminPage() {
   const [authed, setAuthed] = React.useState(() => sessionStorage.getItem(ADMIN_SESSION_KEY) === "true");
-  const { feeds, upsertFeed, deleteFeed, setFeeds, exportJson, importJson, createNewFeed } = useFeedConfigs();
+  const { feeds, loading, syncState, refreshFeeds, upsertFeed, deleteFeed, exportJson, importJson, createNewFeed } =
+    useFeedConfigs();
   const [tab, setTab] = React.useState<"feeds" | "embeds">("feeds");
 
   const [statusById, setStatusById] = React.useState<Record<string, FeedStatusState>>({});
-
   const [editing, setEditing] = React.useState<FeedConfig | null>(null);
+  const [saveError, setSaveError] = React.useState<string | null>(null);
+  const [saving, setSaving] = React.useState(false);
 
   const onLogout = () => {
     sessionStorage.removeItem(ADMIN_SESSION_KEY);
@@ -55,6 +58,41 @@ export function AdminPage() {
 
   const copyText = async (text: string) => {
     await navigator.clipboard.writeText(text);
+  };
+
+  const onSaveFeed = async () => {
+    if (!editing) return;
+    setSaveError(null);
+    setSaving(true);
+    try {
+      await upsertFeed(editing);
+      setEditing(null);
+    } catch (err) {
+      setSaveError(err instanceof Error ? err.message : "Failed to save feed.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const onDeleteFeed = async (id: string) => {
+    if (!window.confirm("Delete this feed? This removes it from the site for everyone.")) return;
+    setSaveError(null);
+    try {
+      await deleteFeed(id);
+    } catch (err) {
+      setSaveError(err instanceof Error ? err.message : "Failed to delete feed.");
+    }
+  };
+
+  const onToggleActive = async (id: string) => {
+    const f = feeds.find((x) => x.id === id);
+    if (!f) return;
+    setSaveError(null);
+    try {
+      await upsertFeed({ ...f, active: !f.active });
+    } catch (err) {
+      setSaveError(err instanceof Error ? err.message : "Failed to update feed.");
+    }
   };
 
   if (!authed) {
@@ -91,14 +129,24 @@ export function AdminPage() {
 
       {tab === "feeds" ? (
         <div className={styles.stack}>
-          <FeedSyncPanel />
+          <GitHubConnectPanel />
+          <FeedSyncPanel onRefreshFeeds={() => void refreshFeeds()} />
           <WidgetSettingsPanel />
+
+          {syncState.busy || syncState.message || syncState.error ? (
+            <div className={[styles.syncBanner, syncState.error ? styles.syncError : ""].join(" ")}>
+              {syncState.busy ? <span className={styles.spinner} aria-hidden /> : null}
+              {syncState.error ?? syncState.message}
+            </div>
+          ) : null}
+          {saveError ? <div className={[styles.syncBanner, styles.syncError].join(" ")}>{saveError}</div> : null}
 
           <div className={styles.grid}>
             <div className={styles.panel}>
               <h1 className={styles.h1}>Feeds</h1>
               <p className={styles.micro}>
-                Configs persist in <code>localStorage</code>. Handshake feeds load from the synced JSON cache (see above).
+                Feeds are stored in GitHub and sync across devices. Paste a feed URL and name — syncing happens
+                automatically.
               </p>
 
             <div className={styles.actionsRow}>
@@ -106,7 +154,9 @@ export function AdminPage() {
                 type="button"
                 onClick={() => {
                   setEditing(createNewFeed());
+                  setSaveError(null);
                 }}
+                disabled={syncState.busy}
               >
                 Add feed
               </Button>
@@ -126,8 +176,8 @@ export function AdminPage() {
                   }}
                 />
               </label>
-              <Button type="button" variant="ghost" onClick={() => setFeeds([])}>
-                Clear all (local)
+              <Button type="button" variant="ghost" onClick={() => void refreshFeeds()}>
+                Refresh from site
               </Button>
             </div>
 
@@ -135,48 +185,49 @@ export function AdminPage() {
               <FeedForm
                 value={editing}
                 onChange={setEditing}
-                onSave={() => {
-                  upsertFeed(editing);
-                  setEditing(null);
-                }}
+                onSave={onSaveFeed}
                 onCancel={() => setEditing(null)}
+                saving={saving || syncState.busy}
               />
             ) : null}
           </div>
 
           <div className={styles.panel}>
-            <FeedList
-              feeds={feeds}
-              statusById={statusById}
-              onEdit={(f) => setEditing(f)}
-              onDelete={(id) => deleteFeed(id)}
-              onToggleActive={(id) => {
-                const f = feeds.find((x) => x.id === id);
-                if (!f) return;
-                upsertFeed({ ...f, active: !f.active });
-              }}
-              onTest={onTest}
-              onPreviewDirectory={(f) => window.open(`#/embed/feed/${encodeURIComponent(f.id)}/directory`, "_blank", "noopener,noreferrer")}
-              onPreviewFeatured={(f) => window.open(`#/embed/feed/${encodeURIComponent(f.id)}/featured`, "_blank", "noopener,noreferrer")}
-              onCopyDirectoryEmbed={(f) =>
-                void copyText(
-                  generateIframeEmbedCode({
-                    title: `${f.name} — Directory`,
-                    route: `embed/feed/${encodeURIComponent(f.id)}/directory`,
-                    height: EMBED_HEIGHT_DIRECTORY_PAGE,
-                  }),
-                )
-              }
-              onCopyFeaturedEmbed={(f) =>
-                void copyText(
-                  generateIframeEmbedCode({
-                    title: `${f.name} — Featured`,
-                    route: `embed/feed/${encodeURIComponent(f.id)}/featured`,
-                    height: EMBED_HEIGHT_FEATURED,
-                  }),
-                )
-              }
-            />
+            {loading ? (
+              <div className={styles.micro}>Loading feeds…</div>
+            ) : (
+              <FeedList
+                feeds={feeds}
+                statusById={statusById}
+                onEdit={(f) => {
+                  setEditing(f);
+                  setSaveError(null);
+                }}
+                onDelete={(id) => void onDeleteFeed(id)}
+                onToggleActive={(id) => void onToggleActive(id)}
+                onTest={onTest}
+                onPreviewDirectory={(f) => window.open(`#/embed/feed/${encodeURIComponent(f.id)}/directory`, "_blank", "noopener,noreferrer")}
+                onPreviewFeatured={(f) => window.open(`#/embed/feed/${encodeURIComponent(f.id)}/featured`, "_blank", "noopener,noreferrer")}
+                onCopyDirectoryEmbed={(f) =>
+                  void copyText(
+                    generateIframeEmbedCode({
+                      title: `${f.name} — Directory`,
+                      route: `embed/feed/${encodeURIComponent(f.id)}/directory`,
+                      height: EMBED_HEIGHT_DIRECTORY_PAGE,
+                    }),
+                  )
+                }
+                onCopyFeaturedEmbed={(f) =>
+                  void copyText(
+                    generateIframeEmbedCode({
+                      title: `${f.name} — Featured`,
+                      route: `embed/feed/${encodeURIComponent(f.id)}/featured`,
+                      height: EMBED_HEIGHT_FEATURED,
+                    }),
+                  )
+                }
+              />
+            )}
           </div>
         </div>
         </div>
@@ -186,4 +237,3 @@ export function AdminPage() {
     </div>
   );
 }
-
