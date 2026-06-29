@@ -37,6 +37,13 @@
       "url": "https://csun.joinhandshake.com/external_feeds/26772/public.rss?token=BPqGcXi_HMEp6poUPfIuBkGr7f_dM9wryi5kNPNqnWaldobiWvaY_A",
       "type": "rss",
       "active": true
+    },
+    {
+      "id": "handshake_feed_26771",
+      "name": "Humanities",
+      "url": "https://csun.joinhandshake.com/external_feeds/26771/public.rss?token=TqspE27hqErABRtSivHe7_VtRwSi3f3gppu5EyuywUyXRpPMxWZEAQ",
+      "type": "rss",
+      "active": true
     }
   ]
 }

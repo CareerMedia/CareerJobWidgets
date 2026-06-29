@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-06-29T16:51:14.963Z",
+  "syncedAt": "2026-06-29T16:53:56.229Z",
   "feeds": [
     {
       "id": "csun_amc_handshake",
@@ -35,6 +35,13 @@
       "id": "handshake_feed_26772",
       "name": "Health & Human Development",
       "url": "https://csun.joinhandshake.com/external_feeds/26772/public.rss?token=BPqGcXi_HMEp6poUPfIuBkGr7f_dM9wryi5kNPNqnWaldobiWvaY_A",
+      "type": "rss",
+      "active": true
+    },
+    {
+      "id": "handshake_feed_26771",
+      "name": "Humanities",
+      "url": "https://csun.joinhandshake.com/external_feeds/26771/public.rss?token=TqspE27hqErABRtSivHe7_VtRwSi3f3gppu5EyuywUyXRpPMxWZEAQ",
       "type": "rss",
       "active": true
     }
