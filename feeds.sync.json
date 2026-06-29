@@ -23,6 +23,13 @@
       "url": "https://csun.joinhandshake.com/external_feeds/26773/public.rss?token=GbzBRWl3hVQ8Lr7IrHTKI_9OjhpbbIAY7kz5hhH4OCt824gxVAWOYA",
       "type": "rss",
       "active": true
+    },
+    {
+      "id": "handshake_feed_26774",
+      "name": "Andrew J. Anagnost College of Engineering and Computer Science",
+      "url": "https://csun.joinhandshake.com/external_feeds/26774/public.rss?token=68oQcL6e6PC5W6Ztxkzip_kXKUH0MaA67vuHuth286d7en7YBi5C2g",
+      "type": "rss",
+      "active": true
     }
   ]
 }
