@@ -30,6 +30,13 @@
       "url": "https://csun.joinhandshake.com/external_feeds/26774/public.rss?token=68oQcL6e6PC5W6Ztxkzip_kXKUH0MaA67vuHuth286d7en7YBi5C2g",
       "type": "rss",
       "active": true
+    },
+    {
+      "id": "handshake_feed_26772",
+      "name": "Health & Human Development",
+      "url": "https://csun.joinhandshake.com/external_feeds/26772/public.rss?token=BPqGcXi_HMEp6poUPfIuBkGr7f_dM9wryi5kNPNqnWaldobiWvaY_A",
+      "type": "rss",
+      "active": true
     }
   ]
 }
