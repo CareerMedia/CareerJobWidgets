@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-08-26T18:39:36.776Z",
+  "syncedAt": "2026-08-26T18:42:19.925Z",
   "feeds": [
     {
       "id": "csun_amc_handshake",
@@ -63,6 +63,13 @@
       "id": "handshake_feed_14261",
       "name": "On-Campus Jobs",
       "url": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
+      "type": "rss",
+      "active": true
+    },
+    {
+      "id": "handshake_feed_27294",
+      "name": "On-Campus Federal Work Study Jobs",
+      "url": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
       "type": "rss",
       "active": true
     }
