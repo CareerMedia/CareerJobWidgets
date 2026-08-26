@@ -23,6 +23,11 @@ export async function saveFeedToRepo(action: "upsert" | "delete", feed: SyncFeed
   if (result === "failure") {
     throw new Error("GitHub Actions failed while saving the feed. Check the Actions tab for details.");
   }
+  if (result === "queued_timeout") {
+    throw new Error(
+      "GitHub Actions stayed queued (no runner). Open the Actions tab, cancel the stuck “Admin save feed” run, then try Save again.",
+    );
+  }
   if (result === "timeout") {
     throw new Error("Timed out waiting for GitHub Actions. Check the Actions tab — the feed may still save.");
   }

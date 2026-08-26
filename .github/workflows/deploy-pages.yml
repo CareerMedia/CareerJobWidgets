@@ -48,6 +48,9 @@ jobs:
         run: pnpm run build
         env:
           NODE_ENV: production
+          # Feed JSON is already committed by admin-save / daily sync. Rebuild
+          # manifest from cache only so deploy doesn't re-hit Handshake (and race/cancel).
+          SKIP_FETCH: "1"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

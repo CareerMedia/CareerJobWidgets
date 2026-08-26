@@ -61,15 +61,22 @@ type WorkflowRun = {
   created_at: string;
 };
 
+export type WorkflowWaitResult =
+  | "success"
+  | "failure"
+  | "timeout"
+  | "queued_timeout";
+
 /** Wait for the most recent workflow_dispatch run started after `startedAfter`. */
 export async function waitForWorkflowSuccess(
   workflowFile: string,
   token: string,
   startedAfter: Date,
-  timeoutMs = 300_000,
-): Promise<"success" | "failure" | "timeout"> {
+  timeoutMs = 360_000,
+): Promise<WorkflowWaitResult> {
   const start = Date.now();
   let runId: number | null = null;
+  let lastStatus: string | null = null;
 
   while (Date.now() - start < timeoutMs) {
     const res = await fetch(
@@ -81,6 +88,7 @@ export async function waitForWorkflowSuccess(
       const run = data.workflow_runs?.find((r) => new Date(r.created_at) >= startedAfter);
       if (run) {
         runId = run.id;
+        lastStatus = run.status;
         if (run.status === "completed") {
           return run.conclusion === "success" ? "success" : "failure";
         }
@@ -96,9 +104,14 @@ export async function waitForWorkflowSuccess(
     if (res.ok) {
       const run = (await res.json()) as WorkflowRun;
       if (run.status === "completed") return run.conclusion === "success" ? "success" : "failure";
+      lastStatus = run.status;
     }
   }
 
+  // Distinguish "never got a runner" from "still running after timeout".
+  if (lastStatus === "queued" || lastStatus === "pending" || lastStatus === "waiting") {
+    return "queued_timeout";
+  }
   return "timeout";
 }
 

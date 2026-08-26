@@ -4,6 +4,11 @@
  *
  * Config: feeds.sync.json
  * Optional: set urlEnv on a feed entry to read the URL from an environment variable instead.
+ *
+ * Env:
+ *   SYNC_FEED_ID   - if set, only re-fetch this feed id; reuse existing cache files for others
+ *   SKIP_FETCH=1   - do not fetch; rebuild manifest/feeds-config from existing cache files only
+ *   FETCH_TIMEOUT_MS - per-feed fetch timeout (default 60000)
  */
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -13,6 +18,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const CONFIG_PATH = path.join(ROOT, "feeds.sync.json");
 const OUT_DIR = path.join(ROOT, "public", "data", "feeds");
+const FETCH_TIMEOUT_MS = Number(process.env.FETCH_TIMEOUT_MS || 60_000);
 
 function normalizeFeedUrl(url) {
   try {
@@ -141,9 +147,26 @@ function detectType(configured, bodyText) {
 }
 
 async function fetchFeedText(url) {
-  const res = await fetch(url, { headers: { Accept: "application/rss+xml, application/json, */*" } });
+  const res = await fetch(url, {
+    headers: { Accept: "application/rss+xml, application/json, */*" },
+    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+  });
   if (!res.ok) throw new Error(`Request failed (${res.status}) for ${url}`);
   return res.text();
+}
+
+async function readExistingCache(feedId) {
+  const fileName = `${feedId}.json`;
+  const outPath = path.join(OUT_DIR, fileName);
+  try {
+    const raw = await fs.readFile(outPath, "utf8");
+    const parsed = JSON.parse(raw);
+    const jobs = Array.isArray(parsed?.jobs) ? parsed.jobs : null;
+    if (!jobs) return null;
+    return { fileName, jobs, syncedAt: parsed.syncedAt };
+  } catch {
+    return null;
+  }
 }
 
 async function main() {
@@ -151,6 +174,10 @@ async function main() {
   const config = JSON.parse(raw);
   const feeds = Array.isArray(config.feeds) ? config.feeds : [];
   await fs.mkdir(OUT_DIR, { recursive: true });
+
+  const skipFetch = process.env.SKIP_FETCH === "1" || process.env.SKIP_FETCH === "true";
+  const syncFeedId = (process.env.SYNC_FEED_ID || "").trim();
+  const onlyFetchId = syncFeedId || null;
 
   const manifest = {
     syncedAt: new Date().toISOString(),
@@ -162,6 +189,7 @@ async function main() {
   };
 
   const feedsConfig = [];
+  const failures = [];
 
   for (const feed of feeds) {
     const url = feed.urlEnv ? process.env[feed.urlEnv] || feed.url : feed.url;
@@ -169,21 +197,61 @@ async function main() {
       console.warn(`Skipping feed ${feed.id}: no URL`);
       continue;
     }
-    console.log(`Syncing ${feed.id} …`);
-    const text = await fetchFeedText(url);
-    const type = detectType(feed.type ?? "auto", text);
-    const jobs =
-      type === "rss"
-        ? parseRssToJobs({ xmlText: text, feedId: feed.id, feedName: feed.name })
-        : parseJsonToJobs({ jsonText: text, feedId: feed.id, feedName: feed.name });
 
     const fileName = `${feed.id}.json`;
     const outPath = path.join(OUT_DIR, fileName);
-    await fs.writeFile(
-      outPath,
-      JSON.stringify({ feedId: feed.id, syncedAt: manifest.syncedAt, jobs }, null, 2),
-      "utf8",
-    );
+    const shouldFetch =
+      !skipFetch && (!onlyFetchId || onlyFetchId === feed.id);
+
+    let jobs;
+    let type = feed.type ?? "rss";
+
+    if (!shouldFetch) {
+      const existing = await readExistingCache(feed.id);
+      if (existing) {
+        jobs = existing.jobs;
+        console.log(`Reusing cache for ${feed.id} (${jobs.length} jobs)`);
+      } else if (skipFetch) {
+        console.warn(`No cache for ${feed.id} and SKIP_FETCH set — omitting from manifest.`);
+        continue;
+      } else {
+        console.log(`No cache for ${feed.id}; fetching…`);
+      }
+    }
+
+    if (jobs === undefined) {
+      console.log(`Syncing ${feed.id} …`);
+      try {
+        const text = await fetchFeedText(url);
+        type = detectType(feed.type ?? "auto", text);
+        jobs =
+          type === "rss"
+            ? parseRssToJobs({ xmlText: text, feedId: feed.id, feedName: feed.name })
+            : parseJsonToJobs({ jsonText: text, feedId: feed.id, feedName: feed.name });
+
+        await fs.writeFile(
+          outPath,
+          JSON.stringify({ feedId: feed.id, syncedAt: manifest.syncedAt, jobs }, null, 2),
+          "utf8",
+        );
+        console.log(`  → ${jobs.length} jobs → ${fileName}`);
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        console.error(`  ✗ ${feed.id}: ${message}`);
+        const existing = await readExistingCache(feed.id);
+        if (existing) {
+          jobs = existing.jobs;
+          console.warn(`  → keeping previous cache (${jobs.length} jobs)`);
+          failures.push(`${feed.id}: ${message} (kept cache)`);
+        } else if (onlyFetchId === feed.id) {
+          // The feed being saved must succeed — don't silently omit it.
+          throw new Error(`Failed to sync ${feed.id}: ${message}`);
+        } else {
+          failures.push(`${feed.id}: ${message} (no cache)`);
+          continue;
+        }
+      }
+    }
 
     manifest.feeds[feed.id] = { url, file: fileName, jobCount: jobs.length, type };
     manifest.urlIndex[url] = fileName;
@@ -200,7 +268,6 @@ async function main() {
       category: feed.category,
       active: feed.active !== false,
     });
-    console.log(`  → ${jobs.length} jobs → ${fileName}`);
   }
 
   await fs.writeFile(path.join(OUT_DIR, "manifest.json"), JSON.stringify(manifest, null, 2), "utf8");
@@ -210,6 +277,9 @@ async function main() {
     "utf8",
   );
   console.log(`Wrote manifest with ${Object.keys(manifest.feeds).length} feed(s).`);
+  if (failures.length) {
+    console.warn(`Completed with ${failures.length} feed warning(s):\n- ${failures.join("\n- ")}`);
+  }
 }
 
 main().catch((err) => {
