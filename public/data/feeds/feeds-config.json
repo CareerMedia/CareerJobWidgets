@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-08-26T14:31:39.206Z",
+  "syncedAt": "2026-08-26T18:39:36.776Z",
   "feeds": [
     {
       "id": "csun_amc_handshake",
@@ -56,6 +56,13 @@
       "id": "handshake_feed_26769",
       "name": "Social & Behavioral Sciences",
       "url": "https://csun.joinhandshake.com/external_feeds/26769/public.rss?token=1tQG5vlNUJQb0JXLjaWzPQmasYU_CEzlmrxHKYdAZ2xCMXScK65AEw",
+      "type": "rss",
+      "active": true
+    },
+    {
+      "id": "handshake_feed_14261",
+      "name": "On-Campus Jobs",
+      "url": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
       "type": "rss",
       "active": true
     }

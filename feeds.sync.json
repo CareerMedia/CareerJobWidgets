@@ -58,6 +58,13 @@
       "url": "https://csun.joinhandshake.com/external_feeds/26769/public.rss?token=1tQG5vlNUJQb0JXLjaWzPQmasYU_CEzlmrxHKYdAZ2xCMXScK65AEw",
       "type": "rss",
       "active": true
+    },
+    {
+      "id": "handshake_feed_14261",
+      "name": "On-Campus Jobs",
+      "url": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
+      "type": "rss",
+      "active": true
     }
   ]
 }
