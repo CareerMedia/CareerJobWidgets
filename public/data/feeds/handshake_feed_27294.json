@@ -1,6 +1,6 @@
 {
   "feedId": "handshake_feed_27294",
-  "syncedAt": "2026-08-27T23:15:42.150Z",
+  "syncedAt": "2026-08-28T23:14:12.591Z",
   "jobs": [
     {
       "id": "gid://handshake/Job/11347843",
@@ -37,18 +37,6 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
       "employer": "CSUN 10170 -College of Social and Behavioral Sciences",
       "expiresAt": "09/21/2026"
-    },
-    {
-      "id": "gid://handshake/Job/11331864",
-      "feedId": "handshake_feed_27294",
-      "feedName": "On-Campus Federal Work Study Jobs",
-      "title": "FWS: IESC Receptionist at CSUN 10374 - International and Exchange Student Center",
-      "description": "Employer: CSUN 10374 - International and Exchange Student Center Expires: 08/28/2026 This position is only accepting FEDERAL WORK STUDY eligible students:Under immediate supervision, the International & Exchange Student Center (IESC) Receptionist provides routine office support to the office staff and incoming students. Open and distribute mail. Light typing of correspondence. Filing. Answering incoming inquiries. Perform other duties as assigned. Please note that job will be performed in-person.QUALIFICATIONS: Must maintain good attendance and be punctual. Must have friendly attitude, open to help other students and staff, and have good telephone etiquette. In addition to being an accepted Federal Work Study candidate.PURPOSE: To provide clerical and receptionist assistance to the IESC department office.WAGE: $16.90 PER HOURCLASSIFICATION: IHOURS: 20 hours/week max during the academic year pending student and office availability. Office open hours are Monday through Friday from 8am - 5pm. Specific hours needed this fall semester include Monday, Wednesday and Thursday afternoons. Subject to change.DEPT NAME & ID: International & Exchange Student Center - 10374 LENGTH OF FWS EMPLOYMENT: August 24th, 2026 through May 15th, 2027. Renewable year to year. Summer employment may be offered.",
-      "pubDate": "Thu, 20 Aug 2026 22:22:04 +0000",
-      "applyUrl": "https://csun.joinhandshake.com/jobs/11331864/share_preview",
-      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
-      "employer": "CSUN 10374 - International and Exchange Student Center",
-      "expiresAt": "08/28/2026"
     },
     {
       "id": "gid://handshake/Job/11318299",
