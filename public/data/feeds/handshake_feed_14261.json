@@ -1,6 +1,6 @@
 {
   "feedId": "handshake_feed_14261",
-  "syncedAt": "2026-08-28T23:14:12.591Z",
+  "syncedAt": "2026-08-29T17:25:18.874Z",
   "jobs": [
     {
       "id": "gid://handshake/Job/11348161",
@@ -313,18 +313,6 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
       "employer": "CSUN Black Scholar Matter (BSM)",
       "expiresAt": "10/01/2026"
-    },
-    {
-      "id": "gid://handshake/Job/11165150",
-      "feedId": "handshake_feed_14261",
-      "feedName": "On-Campus Jobs",
-      "title": "CSUN Parker Dewey Student Ambassador Micro-Internship at Parker Dewey",
-      "description": "Employer: Parker Dewey Expires: 08/29/2026 The selected Parker Dewey Student Ambassador Micro-Intern will be assigned a series of specific tasks designed to spread the word about Parker Dewey Micro-Internships to their peers as well as local/target employers. Specific tasks associated with this project include the below, and additional task details can be viewed via a copy of the Student Ambassador Checklist (https://tinyurl.com/pd-student-checklist-copy).Personal Professional Development, including attendance at a Parker Dewey FAQ webinar, Parker Dewey profile completion, and LinkedIn profile completionSocial media outreach on LinkedIn and Instagram, which will include some graphic creation using Canva templatesEmail communicationBrief presentations to classes and clubs Upon successful completion of this project, the Micro-Intern will be able to add the following to their resume:Built awareness of the Parker Dewey Micro-Internship platform amongst CSUN students and local / target employers via social media outreach, on-campus presentations, and email communicationEnsured that both parties are familiar with how Parker Dewey Micro-Internships allow students an appealing and accessible way to build experience while allowing companies get on-demand project support as well as identify and audition talent for longer term roles.",
-      "pubDate": "Mon, 29 Jun 2026 12:10:46 +0000",
-      "applyUrl": "https://csun.joinhandshake.com/jobs/11165150/share_preview",
-      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
-      "employer": "Parker Dewey",
-      "expiresAt": "08/29/2026"
     },
     {
       "id": "gid://handshake/Job/11161126",
