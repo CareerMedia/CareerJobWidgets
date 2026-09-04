@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-03T17:19:31.616Z",
+  "syncedAt": "2026-09-04T17:11:31.258Z",
   "feeds": {
     "csun_amc_handshake": {
       "url": "https://csun.joinhandshake.com/external_feeds/26754/public.rss?token=n9iGisvAtXtehJcIWugM6l7fhrB0uCybdZCduhyKr5_tDBIPt2OcYA",
@@ -28,13 +28,13 @@
     "handshake_feed_26772": {
       "url": "https://csun.joinhandshake.com/external_feeds/26772/public.rss?token=BPqGcXi_HMEp6poUPfIuBkGr7f_dM9wryi5kNPNqnWaldobiWvaY_A",
       "file": "handshake_feed_26772.json",
-      "jobCount": 186,
+      "jobCount": 182,
       "type": "rss"
     },
     "handshake_feed_26771": {
       "url": "https://csun.joinhandshake.com/external_feeds/26771/public.rss?token=TqspE27hqErABRtSivHe7_VtRwSi3f3gppu5EyuywUyXRpPMxWZEAQ",
       "file": "handshake_feed_26771.json",
-      "jobCount": 139,
+      "jobCount": 135,
       "type": "rss"
     },
     "handshake_feed_26770": {
@@ -52,13 +52,13 @@
     "handshake_feed_14261": {
       "url": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
       "file": "handshake_feed_14261.json",
-      "jobCount": 35,
+      "jobCount": 36,
       "type": "rss"
     },
     "handshake_feed_27294": {
       "url": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
       "file": "handshake_feed_27294.json",
-      "jobCount": 26,
+      "jobCount": 29,
       "type": "rss"
     }
   },
