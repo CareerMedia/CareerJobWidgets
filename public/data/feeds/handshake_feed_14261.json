@@ -1,6 +1,6 @@
 {
   "feedId": "handshake_feed_14261",
-  "syncedAt": "2026-09-05T16:18:40.320Z",
+  "syncedAt": "2026-09-06T16:29:34.941Z",
   "jobs": [
     {
       "id": "gid://handshake/Job/11388910",
@@ -325,18 +325,6 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
       "employer": "CSUN - Physical Plant Management",
       "expiresAt": "09/17/2026"
-    },
-    {
-      "id": "gid://handshake/Job/11281733",
-      "feedId": "handshake_feed_14261",
-      "feedName": "On-Campus Jobs",
-      "title": "Project DATE Coordinator at CSUN 10183 - University Counseling Services",
-      "description": "Employer: CSUN 10183 - University Counseling Services Expires: 09/06/2026 The Project DATE Coordinator will, with appropriate training and mentoring, support, assume primary responsibility for the day-to-day operation of the Project DATE program, and work with the Coordinator in setting student learning objective goals and designing strategies to meet these goals. This includes direct supervision of the peer educators, one-on-one and group student contact and counseling opportunities, planning and facilitating the weekly Project DATE class and Project DATE campus-wide events, assisting with a training seminar, and administrative responsibilities. The coordinator will work under the direct supervision of the Peer Education Programs Coordinator for Peer Education Programs.Project DATE, Discovering Alternatives for Today's Encounter, is a psycho-educational program that reaches over 3000 students each year. Its primary mission is to raise awareness about sexual assault prevention among CSUN students. In supporting this mission, the program helps student peer educators develop leadership, communication, presentation and critical thinking skill, as well as increase their sense of connectedness to the University.The program recruits 10-15 peer educators each semester. Student peer educators, and the coordinator, receive training in sexual assault prevention, bystander intervention, and communication skills. Students are thus prepared to make educational presentations to classes, clubs and organizations on campus as well as plan and facilitate campus-wide fairs and events, including It's on US in October and SAAFE Week in April. The Project DATE peer educators include all genders and represent diverse backgrounds.",
-      "pubDate": "Thu, 6 Aug 2026 19:52:34 +0000",
-      "applyUrl": "https://csun.joinhandshake.com/jobs/11281733/share_preview",
-      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
-      "employer": "CSUN 10183 - University Counseling Services",
-      "expiresAt": "09/06/2026"
     },
     {
       "id": "gid://handshake/Job/11276280",
