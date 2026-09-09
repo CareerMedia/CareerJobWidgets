@@ -1,7 +1,19 @@
 {
   "feedId": "handshake_feed_14261",
-  "syncedAt": "2026-09-08T17:36:12.587Z",
+  "syncedAt": "2026-09-09T17:21:53.057Z",
   "jobs": [
+    {
+      "id": "gid://handshake/Job/11396122",
+      "feedId": "handshake_feed_14261",
+      "feedName": "On-Campus Jobs",
+      "title": "Engineering Geologist Associate - Closing 9/17/26 (Fall) at Los Angeles Department of Water and Power",
+      "description": "Employer: Los Angeles Department of Water and Power - Human Resources Expires: 10/09/2026 An Engineering Geologist Associate performs professional engineering geological investigations and studies in connection with the design and construction of tracts, dams, reservoirs, tank sites, buildings, streets and highways, tunnels, electric power generating plants, transmission towers, distributing stations and other structures; makes precise geological maps; classifies rock and soil samples; investigates water-bearing strata and geothermal prospects, geologic hazards including landslides, and technical geologic aspects of legal questions; applies geologic standards to evaluate underground conditions and environmental aspects of sites and the cleanup of underground contamination; and applies hydrogeologic standards to characterize groundwater and hydrogeologic conditions of sites.",
+      "pubDate": "Tue, 8 Sep 2026 18:56:12 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11396122/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
+      "employer": "Los Angeles Department of Water and Power - Human Resources",
+      "expiresAt": "10/09/2026"
+    },
     {
       "id": "gid://handshake/Job/11388910",
       "feedId": "handshake_feed_14261",
@@ -187,12 +199,12 @@
       "feedId": "handshake_feed_14261",
       "feedName": "On-Campus Jobs",
       "title": "The Soraya's 2026-27 Internship Program at CSUN 10376 - Younes and Soraya Nazarian Center for the Performing Arts",
-      "description": "Employer: CSUN 10376 - Younes and Soraya Nazarian Center for the Performing Arts Expires: 09/12/2026 PLEASE READ ALL INSTRUCTIONS!DOWNLOAD APPLICATION PACKAGE: https://mycsun.box.com/s/hydyu2lrs5rzg9deoqrz5u5uofmp2gwuMUST SUBMIT APPLICATION TO ONLINE PORTAL: https://airtable.com/appCilYPw5BGAwIp6/shr2EvzUOfZI1Cs7aThe Younes and Soraya Nazarian Center for the Performing Arts (The Soraya) at CSUN is pleased to announce that our 2026-27 Mary and Jack Bayramian Internship Program is now accepting applications!This program is designed to help CSUN students get a hands-on experience in the business of operating a performing arts center in a team environment. This pre-professional learning experience allows our interns to work together with our driven, versatile, and creative administrative team. Although internships are unpaid, all interns are eligible for a $9,000 scholarship that will be applicable to the Fall 2026 and Spring 2027 semesters ($4,500 per semester). We are offering internships for the following categories:Development/Donor Relations Events and Special ProjectsCampus EngagementContent CreatorGraphic DesignerFor those interested in applying, please see the following instructions:Download, review, and complete the attached/linked information.Complete a 750-maximum word essay (instructions within application).Be prepared to provide a resume and cover letter, as well as a brief statement of support.DEADLINE IS FRIDAY, September 11th (11:59pm)For questions about the program or the application process, applicants can contact me, the Assistant to the Executive and Artistic Director, at cydne.west@csun.edu. All additional questions can be directed to the Campus Engagement Associate, Juliana Alvarez at (818) 677-8846.",
+      "description": "Employer: CSUN 10376 - Younes and Soraya Nazarian Center for the Performing Arts Expires: 09/15/2026 ONLY APPLY VIA ONLINE PORTAL! LINK BELOW! DOWNLOAD APPLICATION PACKAGE: https://mycsun.box.com/s/hydyu2lrs5rzg9deoqrz5u5uofmp2gwuMUST SUBMIT APPLICATION TO ONLINE PORTAL: https://airtable.com/appCilYPw5BGAwIp6/shr2EvzUOfZI1Cs7aThe Younes and Soraya Nazarian Center for the Performing Arts (The Soraya) at CSUN is pleased to announce that our 2026-27 Mary and Jack Bayramian Internship Program is now accepting applications!This program is designed to help CSUN students get a hands-on experience in the business of operating a performing arts center in a team environment. This pre-professional learning experience allows our interns to work together with our driven, versatile, and creative administrative team. Although internships are unpaid, all interns are eligible for a $9,000 scholarship that will be applicable to the Fall 2026 and Spring 2027 semesters ($4,500 per semester). We are offering internships for the following categories:Development/Donor Relations Events and Special ProjectsCampus EngagementContent CreatorGraphic DesignerFor those interested in applying, please see the following instructions:Download, review, and complete the attached/linked information.Complete a 750-maximum word essay (instructions within application).Be prepared to provide a resume and cover letter, as well as a brief statement of support.DEADLINE IS FRIDAY, September 14th (11:59pm)For questions about the program or the application process, applicants can contact me, the Assistant to the Executive and Artistic Director, at cydne.west@csun.edu. All additional questions can be directed to the Campus Engagement Associate, Juliana Alvarez at (818) 677-8846.",
       "pubDate": "Tue, 25 Aug 2026 21:27:17 +0000",
       "applyUrl": "https://csun.joinhandshake.com/jobs/11347664/share_preview",
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
       "employer": "CSUN 10376 - Younes and Soraya Nazarian Center for the Performing Arts",
-      "expiresAt": "09/12/2026"
+      "expiresAt": "09/15/2026"
     },
     {
       "id": "gid://handshake/Job/11345792",
@@ -361,18 +373,6 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
       "employer": "CSUN 10052 - Information Technology",
       "expiresAt": "09/12/2026"
-    },
-    {
-      "id": "gid://handshake/Job/11199397",
-      "feedId": "handshake_feed_14261",
-      "feedName": "On-Campus Jobs",
-      "title": "Licensing Student Assistant at The University Corporation",
-      "description": "Employer: The University Corporation Expires: 01/01/2027 About The University Corporation The University Corporation is a non-profit auxiliary corporation providing commercial and administrative services to California State University, Northridge. Our mission is to provide services and solutions that address the needs of California State University, Northridge; to support the academic, research and creative endeavors of its students, faculty and staff; and to enhance the quality of campus life. Major DutiesUnder general supervision Provide office/administrative support for The University Corporation’s Licensing Department. Day to day responsibilities include:• Creating files, filing and maintaining each file has all required paperwork• Answering heavy phones, data entry, website updates• Process payments, check requests, code/log check payments• Process event staff timesheets for payroll• Oversee incoming online requests• Create parking passes for clients and maintain parking invoice spreadsheet• Create and email out the weekly Weekend Event Report• Update and maintain licensing calendar with upcoming rentals and film shoots• Responsible for taking minutes and distributing notes from Weekly Licensing Staff Meetings• Maintain and update various event spreadsheets, call logs and licensing email account• Monthly inventory and order office supplies as needed• Participate in film shoots as needed• Additional duties as assigned QualificationsProficiency with Microsoft Word, Excel, and Outlook is a must Creation/maintenance of basic Excel spreadsheets Highly organized, punctual, reliable, efficient Writing skills & telephone conversation skills Interest in Filming, Trademarks/Logos, Contracts and Event Coordination Knowledge, Skills, & AbilitiesGood business etiquette and exceptional customer service skills Ability to multi-task and handle an extremely fast-paced environment Self-starter and eager to learn Some knowledge in Graphic & Web Design programs (preferred) Prior office/admin work experience (preferred). Pay, Benefits, & Work ScheduleThis position is employed through The University Corporation (TUC). The anticipated hiring rate: $16.90 - $17.90 per hour How to ApplyPlease complete the on-line application/resume upload submission process in order to be considered for any open position within the university and its auxiliaries. The hiring department will contact the best qualified candidates and invite them to participate in the interview process. Application Screening begins Monday, July 27th and will continue until position is filled. In order to be considered in the initial review, applications must be submitted prior to the date listed above. Application submissions received after the application screening date will be reviewed at the discretion of the University.For more detailed information on the application and hiring process, please view the link below: http://www-admn.csun.edu/ohrs/employment/ Equal Employment OpportunityThe University Corporation is an Affirmative Action/Equal Opportunity Employer. We consider qualified applicants for employment without regard to race, color, religion, national origin, age, gender, gender identity/expression, sexual orientation, genetic information, medical condition, marital status, veteran status, or disability. Applicants who wish to request an accommodation for a disability may contact the Office of Equity and Diversity at (818) 677-2077.",
-      "pubDate": "Fri, 10 Jul 2026 22:27:36 +0000",
-      "applyUrl": "https://csun.joinhandshake.com/jobs/11199397/share_preview",
-      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
-      "employer": "The University Corporation",
-      "expiresAt": "01/01/2027"
     },
     {
       "id": "gid://handshake/Job/11177951",
