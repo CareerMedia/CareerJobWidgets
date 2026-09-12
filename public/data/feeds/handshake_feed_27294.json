@@ -1,7 +1,19 @@
 {
   "feedId": "handshake_feed_27294",
-  "syncedAt": "2026-09-11T17:21:33.901Z",
+  "syncedAt": "2026-09-12T16:34:29.660Z",
   "jobs": [
+    {
+      "id": "gid://handshake/Job/11403776",
+      "feedId": "handshake_feed_27294",
+      "feedName": "On-Campus Federal Work Study Jobs",
+      "title": "FWS: Philosophy Office Support Student Assistant at CSUN 10151 - Philosophy",
+      "description": "Employer: CSUN 10151 - Philosophy Expires: 10/10/2026 Student Assistant - Philosophy 10151 PURPOSE: To Assist the Department of Philosophy in providing high quality service and educational experiences for students and the CSUN community. DUTIES: Under general supervision, Student Assistant provides general office support to the office staff. Help with receiving walk-ins and guests of the department. Type correspondence, flyers, forms, labels, etc. Update the department's social media accounts (Instagram), help post creative and student-friendly media posts. File, scan, and collate materials. Answer incoming inquiries and make referrals to other departments and programs. Assist in organization and staffing of special events, workshops, tours, etc. Assist with maintenance of department display case and boards. Must maintain good attendance and must be punctual. Work on special projects and/or other duties as assigned. QUALIFICATIONS: Previous office experience recommended but not required. Applicants that are social media savvy, creating posts on Instagram, and other social media outlets are highly sought. Must be a flexible and multi-tasked individual. Ability to work well with diverse students, staff and faculty with respect to confidentiality and reliability. Must possess strong people skills, excellent written and verbal communication skills, as well as excellent telephone etiquette. Experience with MS Word and Excel preferred. SALARY: $17.00 / HourHours: 20 hours a week, AM and/or PM hoursClassification: ILength of FWS Appointment: Fall through May 15. Any employment beyond May 15 is outside of the FWS program. May be renewed annually based on FWS eligibility.Department ID #:10151",
+      "pubDate": "Wed, 9 Sep 2026 22:11:48 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11403776/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
+      "employer": "CSUN 10151 - Philosophy",
+      "expiresAt": "10/10/2026"
+    },
     {
       "id": "gid://handshake/Job/11379176",
       "feedId": "handshake_feed_27294",
@@ -145,18 +157,6 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
       "employer": "CSUN 10186 - Klotz Student Health Center",
       "expiresAt": "09/17/2026"
-    },
-    {
-      "id": "gid://handshake/Job/11301679",
-      "feedId": "handshake_feed_27294",
-      "feedName": "On-Campus Federal Work Study Jobs",
-      "title": "FWS Special Collections and Archives Assistant at CSUN 10050 - University Library",
-      "description": "Employer: CSUN 10050 - University Library Expires: 09/12/2026 DEPARTMENT: 10076POSITION: Special Collections and Archives Assistant Class II (FWS)PURPOSE: Special Collections & Archives holds the library's rare manuscripts, books, periodicals, maps, prints, and art. In Special Collections & Archives users can perform research, engage in classes using primary sources, or view exhibitions. Our collections are made available to researchers in a supervised reading room.DUTIES: Student assistants support the work of staff & faculty in Special Collections & Archives, especially with regards to: Public service, research and reference support, exhibits, paging materials, re-shelving materials, collection processing, patron assistance, preservation, phone and mail requests, and other projects as assigned.QUALIFICATIONS: Must have excellent office and customer service skills, punctual, dependable, detail oriented and be able to work independently with minor supervision.SALARY: $17.50HOURS: 10 to 20 hours per week.CLASSIFICATION: 2LENGTH OF EMPLOYMENT: Fall through May 15. Any employment beyond May 15 is outside of the FWS program. May be renewed annually based on FWS eligibility.",
-      "pubDate": "Wed, 12 Aug 2026 21:33:21 +0000",
-      "applyUrl": "https://csun.joinhandshake.com/jobs/11301679/share_preview",
-      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
-      "employer": "CSUN 10050 - University Library",
-      "expiresAt": "09/12/2026"
     },
     {
       "id": "gid://handshake/Job/11296803",
