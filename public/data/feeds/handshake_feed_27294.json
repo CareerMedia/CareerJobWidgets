@@ -1,6 +1,6 @@
 {
   "feedId": "handshake_feed_27294",
-  "syncedAt": "2026-09-17T17:46:13.683Z",
+  "syncedAt": "2026-09-18T17:18:41.899Z",
   "jobs": [
     {
       "id": "gid://handshake/Job/11379176",
@@ -97,18 +97,6 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
       "employer": "CSUN 10170 -College of Social and Behavioral Sciences",
       "expiresAt": "09/21/2026"
-    },
-    {
-      "id": "gid://handshake/Job/11318299",
-      "feedId": "handshake_feed_27294",
-      "feedName": "On-Campus Federal Work Study Jobs",
-      "title": "FWS: Dean's Office Assistant at CSUN 10127 - College of Engineering & Computer Science",
-      "description": "Employer: CSUN 10127 - College of Engineering & Computer Science Expires: 09/18/2026 Department ID: 10127PURPOSE: Assist staff in Dean's Office.The Anagnost College of Engineering and Computer Science seeks to be a recognized center for excellence for baccalaureate and masters education in computer science and in engineering. The College provides a quality education for its students. It is also a partner in the professional communities of computer science and engineering and provides an essential link between students' education and professional practice.DUTIES:Provide service to students, faculty, staff, and the general public. Responsible for intake of Associate Dean walk-ins, assist with completion of required forms, and scheduling of appointments. Also receive visitors to the Dean and reserve conference rooms. Be able to answer four line phone systems. Help prepare bulk mailings, photocopy, and fax documents. Other duties as assigned.QUALIFICATIONS:Minimum six month working in office setting. Must have excellent customer service skills, be friendly, punctual, maintain confidentiality, and be able to pay attention to detail. Microsoft Office knowledge preferred.SALARY: $17.00/hrLength of FWS Appointment: August through May 15 annually. Renewable year to year.HOURS: M-F: 8:00 a.m. -5:00 p.m. Maximum of 20 hours per weekCLASSIFICATION: Level I - For Information on Student Salary Schedule visit: http://www.csun.edu/careers/student-assistant-work-study-salary-schedule",
-      "pubDate": "Tue, 18 Aug 2026 16:03:06 +0000",
-      "applyUrl": "https://csun.joinhandshake.com/jobs/11318299/share_preview",
-      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
-      "employer": "CSUN 10127 - College of Engineering & Computer Science",
-      "expiresAt": "09/18/2026"
     },
     {
       "id": "gid://handshake/Job/11296803",
