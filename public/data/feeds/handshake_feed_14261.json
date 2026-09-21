@@ -1,7 +1,19 @@
 {
   "feedId": "handshake_feed_14261",
-  "syncedAt": "2026-09-20T17:03:38.606Z",
+  "syncedAt": "2026-09-21T18:56:29.088Z",
   "jobs": [
+    {
+      "id": "gid://handshake/Job/11460344",
+      "feedId": "handshake_feed_14261",
+      "feedName": "On-Campus Jobs",
+      "title": "FWS: LRC Front Desk Student Assistant at CSUN 10090 - Learning Resource Center",
+      "description": "Employer: CSUN 10090 - Learning Resource Center Expires: 10/19/2026 PURPOSE:The Learning Resource Center serves students needing assistance in courses or desiring to improve skills such as reading, writing, note taking, test taking and study strategies — skills necessary for effective university-level learning. The Center also provides services that support, supplement and enrich the University’s regular academic curriculum. DUTIES:Under general supervision of the Assistant Coordinator, the role of a Student Assistant is to greet and direct visitors, answer phone calls, schedule appointments, maintain databases, and perform general office work and other duties as assigned. QUALIFICATIONS:Enrollment at CSUN (minimum 6 units for Undergraduates & 1 Unit for Graduates)Available for regularly scheduled in service training and staff meetings (mandatory) HOURS: Up to 20 hours a week. flexible schedule. DEPT ID: 10090, Learning Resource Center CLASSIFICATION: 1 WAGE: $16.90 - $18.90 per hour FWS LENGTH OF EMPLOYMENT: August 20, 2026 - May 15, 2027. Renewable each semester.",
+      "pubDate": "Fri, 18 Sep 2026 17:30:44 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11460344/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
+      "employer": "CSUN 10090 - Learning Resource Center",
+      "expiresAt": "10/19/2026"
+    },
     {
       "id": "gid://handshake/Job/11454947",
       "feedId": "handshake_feed_14261",
