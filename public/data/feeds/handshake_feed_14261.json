@@ -1,7 +1,19 @@
 {
   "feedId": "handshake_feed_14261",
-  "syncedAt": "2026-09-21T18:56:29.088Z",
+  "syncedAt": "2026-09-22T17:46:44.227Z",
   "jobs": [
+    {
+      "id": "gid://handshake/Job/11462086",
+      "feedId": "handshake_feed_14261",
+      "feedName": "On-Campus Jobs",
+      "title": "Front Desk Student Assistant (TUC - Executive) at The University Corporation",
+      "description": "Employer: The University Corporation Expires: 12/01/2026 About The University Corporation The University Corporation is a non-profit auxiliary corporation providing commercial and administrative services to California State University, Northridge. Our mission is to provide services and solutions that address the needs of California State University, Northridge; to support the academic, research, and creative endeavors of its students, faculty, and staff; and to enhance the quality of campus life. Duties and Responsibilities:Under immediate supervision, the student assistant(s) functions as the front desk receptionist greets and directs visitors, handles incoming phone calls, resolves problems, provides forms, information and guidance, receives and sort incoming mails, handle out going mails, handles check payments and enter data into On-Base and submits check requests. Must be able to multi-task and tolerate frequent interruptions and demanding customers. Must display a general knowledge of all areas of The University Corporation’s (TUC) operation. Must provide exemplary customer service skills. Must be proficient in Word, Excel, e-mail and different Outlook functions. Qualifications:Have a Highschool Diploma or equivalent. Undergraduates shall be enrolled for at least 6 units. Graduates shall be enrolled for at least 4 units in graduate-level courses. Experience working in an office setting is preferred. Knowledge, Specialized Skills, and Abilities:Must display a general knowledge of all areas of The University Corporation’s (TUC) operation. Must provide exemplary customer service skills. Must be proficient in Word, Email, and Excel. Pay, Benefits, & Work ScheduleThis position is employed through The University Corporation (TUC).The anticipated hiring range: $16.90- $17.90Schedule: Determined by Hiring ManagerTime Base: Part-Time General InformationTHE SELECTED CANDIDATE IS REQUIRED TO PASS A THOROUGH DEPARTMENT BACKGROUND INVESTIGATION AND LIVE SCAN. How to ApplyPlease complete the online application/resume upload submission process in order to be considered for any open position within the university and its auxiliaries. The hiring department will contact the best-qualified candidates and invite them to participate in the interview process.For more detailed information on the application and hiring process, please view the link below: http://www-admn.csun.edu/ohrs/employment/ Equal Employment OpportunityThe University Corporation is an Equal Opportunity Employer and prohibits discrimination on the basis of race, color, ethnicity, religion, national origin, age, gender, gender identity/expression, sexual orientation, genetic information, medical condition, marital status, veteran status, and disability. Applicants who wish to request an accommodation for a disability may contact the Office of Equity and Diversity at (818) 677-2077.",
+      "pubDate": "Fri, 18 Sep 2026 21:41:58 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11462086/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
+      "employer": "The University Corporation",
+      "expiresAt": "12/01/2026"
+    },
     {
       "id": "gid://handshake/Job/11460344",
       "feedId": "handshake_feed_14261",
