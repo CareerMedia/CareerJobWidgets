@@ -1,7 +1,19 @@
 {
   "feedId": "handshake_feed_14261",
-  "syncedAt": "2026-09-23T17:59:38.318Z",
+  "syncedAt": "2026-09-24T18:00:51.128Z",
   "jobs": [
+    {
+      "id": "gid://handshake/Job/11497248",
+      "feedId": "handshake_feed_14261",
+      "feedName": "On-Campus Jobs",
+      "title": "Distribution Center Student Assistant Warehouse Worker - Level I at CSUN - Physical Plant Management",
+      "description": "Employer: CSUN - Physical Plant Management Expires: 10/25/2026 The PPM Distribution Center provides inventory management and special-order processing in support of Physical Plant Management’s mission. The PPM Distribution Center stocks more than 5,000 different items including general hardware, office supplies, custodial supplies, and trade-specific parts used by PPM personnel in the maintenance and project work performed campus wide. In addition to the central warehouse, the PPM Distribution Center manages 19 satellite storerooms for custodial supplies across campus.DutiesProvide customer service in the issuance and delivery of materials to fellow PPM employees and Campus DepartmentsPerform cycle countsMaintain par level inventories in satellite storeroomsVerify content of shipments against packing slips and re-stock inventoryPerform data entry associated with inventory management (including MS office and MetaBIM Computerized Maintenance Management System)Light housekeepingAssist various departments within Physical Plant Management in the completion of special tasksQualifications and Additional InformationMust possess a valid CA driver’s licenseAbility to lift/carry up to 50 poundsMicrosoft Office proficientTraining provided for the safe operation of state vehicles, including electric carts, trucks, and forkliftsEntry level position, starting pay is $16.90 per hourMust be enrolled as a student for the Fall and/or Spring semester(s) and available to work 20 hours per week during academic semesterThe Distribution Center is open M-F 6:00 a.m. – 5:00 p.m.Reappointment contingent upon job performance and attendance",
+      "pubDate": "Thu, 24 Sep 2026 16:27:15 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11497248/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
+      "employer": "CSUN - Physical Plant Management",
+      "expiresAt": "10/25/2026"
+    },
     {
       "id": "gid://handshake/Job/11462086",
       "feedId": "handshake_feed_14261",
