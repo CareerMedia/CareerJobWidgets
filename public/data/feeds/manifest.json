@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-28T20:16:55.394Z",
+  "syncedAt": "2026-09-29T18:55:04.889Z",
   "feeds": {
     "csun_amc_handshake": {
       "url": "https://csun.joinhandshake.com/external_feeds/26754/public.rss?token=n9iGisvAtXtehJcIWugM6l7fhrB0uCybdZCduhyKr5_tDBIPt2OcYA",
@@ -58,7 +58,7 @@
     "handshake_feed_27294": {
       "url": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
       "file": "handshake_feed_27294.json",
-      "jobCount": 15,
+      "jobCount": 17,
       "type": "rss"
     }
   },
