@@ -1,6 +1,6 @@
 {
   "feedId": "handshake_feed_27294",
-  "syncedAt": "2026-10-02T18:45:14.380Z",
+  "syncedAt": "2026-10-03T17:39:16.061Z",
   "jobs": [
     {
       "id": "gid://handshake/Job/11479460",
@@ -85,18 +85,6 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
       "employer": "CSUN 10050 - University Library",
       "expiresAt": "10/14/2026"
-    },
-    {
-      "id": "gid://handshake/Job/11379176",
-      "feedId": "handshake_feed_27294",
-      "feedName": "On-Campus Federal Work Study Jobs",
-      "title": "Student Assistant (Anthropology Department) at CSUN 10171 - Anthropology",
-      "description": "Employer: CSUN 10171 - Anthropology Expires: 10/03/2026 Title: Student Assistant (Anthropology Department)Purpose: The Department of Anthropology is seeking a qualified student assistant to assist faculty, staff, students and the public with questions and materials pertaining to the department and program. Duties: Under the direction of a lead administrator, the student assistant is responsible for helping staff, faculty, students, and the public as well as providing support with clerical work, office coverage, and events. Responsibilities include but are not limited to: answering phones, scheduling appointments, data entry, helping with inquiries, assisting with outgoing and incoming mail, copying/scanning/filing, checking and restocking office supplies, helping with social media/reach media/website posts, flyer creation, assisting with events, and other duties assigned. Qualifications:* Have a Federal Work Study Award for the current academic year* Enrolled at least half-time (6 units for undergraduate; 4 units for graduate)* Ability to interact in a friendly, cooperative, helpful, and appropriate manner with all supervisor(s), faculty, administration, staff, students and the public.* Reliable, dependable, and self-starter* Great customer service customer service skills on the phone, through email and in person* Detail-oriented, and have excellent organizational and communication skills* Ability to follow through on all tasks and meet deadlines* Ability to learn and interpret and follow department procedures* Experience using Microsoft applications: Word, Excel, Outlook, PowerPoint and multi-media* Knowledge of campus services is a plus* Experience with social media platforms is a plus: Instagram, Facebook, Youtube, etc.* Experience with Canva is a plus Hours: up to 20 hours a week, flexible scheduleClassification: 1Pay Rate: $16.90Dept ID: 10171 Length of FWS Appointment: Start of Fall semester through May 15 annually. Any employment beyond May 15 is outside of the FWS program. May be renewed annually based on FWS eligibility.",
-      "pubDate": "Wed, 2 Sep 2026 19:23:45 +0000",
-      "applyUrl": "https://csun.joinhandshake.com/jobs/11379176/share_preview",
-      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
-      "employer": "CSUN 10171 - Anthropology",
-      "expiresAt": "10/03/2026"
     },
     {
       "id": "gid://handshake/Job/11378155",
