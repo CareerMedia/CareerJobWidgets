@@ -1,6 +1,6 @@
 {
   "feedId": "handshake_feed_27294",
-  "syncedAt": "2026-10-17T16:41:02.858Z",
+  "syncedAt": "2026-10-18T16:58:33.109Z",
   "jobs": [
     {
       "id": "gid://handshake/Job/11479460",
@@ -25,18 +25,6 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
       "employer": "CSUN 10335 - Physical Therapy",
       "expiresAt": "10/22/2026"
-    },
-    {
-      "id": "gid://handshake/Job/11454055",
-      "feedId": "handshake_feed_27294",
-      "feedName": "On-Campus Federal Work Study Jobs",
-      "title": "Biology Stockroom Assistant at CSUN 10158 - Biology Department",
-      "description": "Employer: CSUN 10158 - Biology Department Expires: 10/18/2026 Purpose: Provide outstanding customer service and professional interactions to our faculty, staff, and students. Support research and teaching operations.Duties: Interact face-to-face and over the phone with members of the campus community. Retrieve and hand-out research/classroom supplies. Check-in and deliver packages throughout the Department. Transport and set-up high pressure gas cylinders (training will be provided). Assist staff with moving equipment/furniture. Assist with inventory management. Perform other duties as assigned.Qualifications: Be enrolled at CSUN at least part-time. Ability to work both in a team and independently. Applicants should be friendly, punctual, and detail-oriented with a positive attitude. Familiarity with basic office equipment (e.g., copy machine, scanner) and computer software (e.g. Word, Excel).Salary: $16.90 - $18.90Hours/Week: Monday - Friday, 8:00 - 5:00, hours flexibleClassification: 1Department ID:10158Length of FWS Appointment: August to May 15th annually. Renewable year to year",
-      "pubDate": "Thu, 17 Sep 2026 16:59:36 +0000",
-      "applyUrl": "https://csun.joinhandshake.com/jobs/11454055/share_preview",
-      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
-      "employer": "CSUN 10158 - Biology Department",
-      "expiresAt": "10/18/2026"
     },
     {
       "id": "gid://handshake/Job/11378155",
