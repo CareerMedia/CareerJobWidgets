@@ -1,7 +1,19 @@
 {
   "feedId": "handshake_feed_27294",
-  "syncedAt": "2026-10-20T18:08:09.132Z",
+  "syncedAt": "2026-10-21T18:16:55.396Z",
   "jobs": [
+    {
+      "id": "gid://handshake/Job/11651715",
+      "feedId": "handshake_feed_27294",
+      "feedName": "On-Campus Federal Work Study Jobs",
+      "title": "FWS: Graduate Student Assistant at CSUN 10470 - Research and Sponsored Programs",
+      "description": "Employer: CSUN 10470 - Research and Sponsored Programs Expires: 11/13/2026 The Office of Research & Sponsored Programs (RSP) is hiring a part-time Graduate Student Assistant to support our communications, marketing, and visual design efforts related to research development. If you have a passion for creative storytelling, digital design, and research promotion, we encourage you to apply!Purpose:In this role, you will collaborate with the Research Development Officer and other RSP staff members to create written and visual materials that highlight research successes and help identify funding opportunities. Duties: Job duties include but are not limited to:Assist staff with the development of a bi-monthly newsletter:Managing the email marketing platform (e.g., Mailchimp, CSUN email marketing tool)Preparing news items related to department announcements and grant proposal developmentConduct funding searches using grants databases (e.g., Pivot-RP, Grants.gov, Grants.ca.gov) and draft summaries of funding opportunity announcements for faculty and researchersReviewing external funding announcements from public and private sponsors; identify eligibility requirements and assess potential alignment with CSUN’s research, scholarship, and creative activity interestsCurate research success stories for RSP events, website, and marketing communication materials:Write news articles and collect images from grant awardees to celebrate research achievementsCreate digital media or visual designs for marketing materials (e.g., brochures, booklet, social media)Support the development of social media content to increase online presence and engagement with research-focused audiences across various platformsAssist in developing brochures and promotional materials for RSP eventsQualifications:Federal Work-Study (FWS) eligibleAdvanced reading, writing, and analytical skillsDigital media and visual design skills desiredDemonstrated organizational skills to independently manage a variety of tasksProficient computer skills in Microsoft Office (Outlook, Word, Excel)Ability to learn new technology platforms (e.g., Cayuse SP, Pivot-RP, Mailchimp)Must be enrolled in a graduate program and will be at CSUN for at least the next 18 monthsJob Type: On-Campus Student EmploymentHours: Up to 20 hours per week Department ID: 10470Classification: FWS-CA Class 2 Wage: $18.00/hour Length of Student’s FWS Employment: Fall through May 15. Any employment beyond May 15 is outside of the FWS program. May be renewed annually based on FWS eligibility. Where Students Submit Application: Apply via Handshake or submit your resume and a brief cover letter expressing your interest and qualifications via email to research@csun.edu. Written and visual samples are encouraged but not required.",
+      "pubDate": "Tue, 13 Oct 2026 16:51:20 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11651715/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
+      "employer": "CSUN 10470 - Research and Sponsored Programs",
+      "expiresAt": "11/13/2026"
+    },
     {
       "id": "gid://handshake/Job/11638577",
       "feedId": "handshake_feed_27294",
