@@ -1,6 +1,6 @@
 {
   "feedId": "handshake_feed_27294",
-  "syncedAt": "2026-10-22T18:11:21.630Z",
+  "syncedAt": "2026-10-23T17:58:48.369Z",
   "jobs": [
     {
       "id": "gid://handshake/Job/11651715",
@@ -13,6 +13,18 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
       "employer": "CSUN 10470 - Research and Sponsored Programs",
       "expiresAt": "11/13/2026"
+    },
+    {
+      "id": "gid://handshake/Job/11648429",
+      "feedId": "handshake_feed_27294",
+      "feedName": "On-Campus Federal Work Study Jobs",
+      "title": "Student Assistant at CSUN 10308 - Office of Community Engagement",
+      "description": "Employer: CSUN 10308 - Office of Community Engagement Expires: 12/12/2026 OCE STUDENT ASSISTANT JOB DESCRIPTION ABOUT THE DEPARTMENT:The Office of Community Engagement supports CSUN's mission to cultivate civic responsibility among students, faculty, and staff by facilitating community-based (service learning) classes, promoting co-curricular engagement activities, implementing community-based research, and fostering sustainable community partnerships. PURPOSE:Our office seeks a student assistant to assist with office tasks pertaining to faculty and students participating in community-based projects at CSUN. This position is open to graduate or undergraduate students. It will allow the student assistant to gain experience and confidence in supporting fellow students, assisting with program activities, and the use of the Service-Learning S4 Database. All the necessary training will be provided by the Office of Community Engagement. Student Assistants will be offered up to 20 hours maximum per week of work. Please send resumes and a brief cover letter explaining your interest in this position to communityengagement@csun.eduInclude “Student Assistant Opportunity” in the subject line of your email. *Please note in your email to us whether you are a Federal Work-Study eligible student DUTIES:Reports to the Community Engagement Analyst and OCE Faculty DirectorAssists staff with preparing materials and providing support during in-class orientation presentations for community-based learning coursesAssists students, staff, faculty, and community partners with routine questions regarding service learning clearance and placement procedures, form submissions and other S4 Database-related issues using established procedures and referring complex questions to staff.Assists staff with planning, organization and implementation of special events for all of the OCE programs, tabling and community outreach activities, including event preparation, materials, and logistical support. Provides general office clerical support including typing, filing, answering phones, photocopying, faxing, etc.Assists with creating marketing materials, social media content, and promotional outreach using established templates and guidance from department staff (Canva, Adobe, and social media platforms).Performs other related duties as necessary can be assigned to achieve the program’s goals and objectives QUALIFICATIONS:Excellent communication skillsAbility to complete assigned tasks with guidance and work collaboratively with staff and other students.Professionalism in written correspondenceWorking knowledge of Microsoft Office Suite, especially Word and Excel (will train in Excel)Familiarity with Service Learning and Community EngagementPrevious experience with class presentations, tutoring, or mentoring preferred but not required.Previous knowledge of S4 databases welcome, but not requiredBasic familiarity with creating flyers and promotional materials.Familiarity with social media platforms such as Instagram, Facebook, and Twitter. EDUCATION: Must be a currently enrolled as a California State University Northridge student.EXPERIENCE: Previous related office experience or specialized education preferred but not required.HOURS: Part-Time, up to 20 Hours maximum Per Week during the Academic Semester. FWS LENGTH OF EMPLOYMENT: Fall through May 15. Any employment beyond May 15 is outside of the FWS program. May be renewed annually based on FWS eligibility.CLASSIFICATION: I - Student AssistantPAY RATE: $17.00 per hourDEPT ID: 10308",
+      "pubDate": "Tue, 13 Oct 2026 00:56:07 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11648429/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
+      "employer": "CSUN 10308 - Office of Community Engagement",
+      "expiresAt": "12/12/2026"
     },
     {
       "id": "gid://handshake/Job/11638577",
