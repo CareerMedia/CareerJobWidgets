@@ -1,7 +1,43 @@
 {
   "feedId": "handshake_feed_14261",
-  "syncedAt": "2026-11-04T20:34:20.163Z",
+  "syncedAt": "2026-11-05T20:50:57.917Z",
   "jobs": [
+    {
+      "id": "gid://handshake/Job/11866363",
+      "feedId": "handshake_feed_14261",
+      "feedName": "On-Campus Jobs",
+      "title": "FWS: CEPD Front Desk & Program Support Assistant at CSUN 10102 - Nazarian CEPD",
+      "description": "Employer: CSUN 10102 - Nazarian CEPD Expires: 01/06/2027 Responsibilities:• Front desk reception.• Assisting staff in hosting events.• Communicate with students, staff, and faculty via email, phone, and in-person.• Answering student and employer inquiries via email.• Scheduling and maintaining appointments on online interface.• Create and maintain social media posts for office and programming accounts.• Various projects related to professional development and career/internship programs. Qualifications:• Work Study eligible.• Must be able to work on-campus.• Freshman or Sophomore preferred.• Familiar with social media platforms.• Strong organizational skills.• Strong written and verbal communication skills.• Business major preferred, but not required.• Experience with Microsoft Outlook, Excel, Teams and GSuite preferred.• Able to work weeknights and occasional weekends. Purpose:The Career Education & Professional Development (CEPD) Center is a decentralized career center in the David Nazarian College of Business and Economics staffed by professionals who assist students and alumni with their experiential learning, career exploration, and career networking needs. Our model is grounded in business-specific career development, experiential learning, employer relations, and connections with the community.For more information about our office, visit nazariancareers.csun.edu. Hours: Part Time: 12 hrs/weekWage: $16.90/hourClassification: IDept. ID: 10102Length of FWS Appointment: Fall through May 15. Any employment beyond May 15 is outside of the FWS program. May be renewed annually based on FWS eligibility.",
+      "pubDate": "Wed, 4 Nov 2026 22:53:07 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11866363/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
+      "employer": "CSUN 10102 - Nazarian CEPD",
+      "expiresAt": "01/06/2027"
+    },
+    {
+      "id": "gid://handshake/Job/11866021",
+      "feedId": "handshake_feed_14261",
+      "feedName": "On-Campus Jobs",
+      "title": "FWS: CSUN Athletics Marketing Internship at CSUN 10301 - Athletics",
+      "description": "Employer: CSUN 10301 - Athletics Expires: 11/07/2026 Purpose – The purpose of the CSUN Athletics Marketing Internship is to provide education and experience to interns in the Athletic Department. Interns will learn how to create the best environment at CSUN sporting events and encourage students, alumni, donors, and fans to attend the events. Duties – The main goal for a marketing intern is to provide meaningful experience working in a NCAA Division I Athletic Department. Marketing Interns will help market all 19 sporting events and assist with community relations. In the office (depending on availability of the office and the intern’s schedule), marketing interns will help with daily office responsibilities, preparing upcoming sporting events, creating new promotions and reaching out to the local community. Outside of the office, marketing interns will help with in-game promotions and the production at all sporting events. Minimum Qualifications – Knowledge of collegiate sports or professional sports, school spirit, Microsoft Office, Excel, Word, and Adobe Photoshop. Hours – 15-20 hours a week. Mon-Sun. Department ID – 10301 Classification – Class I Wage – $16.90 Length of FWS appointment – Fall through May 15. Any employment beyond May 15 is outside of the FWS program. May be renewed annually based on FWS eligibility.",
+      "pubDate": "Wed, 4 Nov 2026 21:38:39 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11866021/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
+      "employer": "CSUN 10301 - Athletics",
+      "expiresAt": "11/07/2026"
+    },
+    {
+      "id": "gid://handshake/Job/11849050",
+      "feedId": "handshake_feed_14261",
+      "feedName": "On-Campus Jobs",
+      "title": "FWS: IT Help Center Student Assistant (Work Study) at CSUN 10052 - Information Technology",
+      "description": "Employer: CSUN 10052 - Information Technology Expires: 12/03/2026 Purpose:The Information Technology (IT) division is responsible for the delivery of effective, secure, reliable technology infrastructure and technology services that enable, promote, and support students, faculty and staff to achieve their goals.A background check (including a criminal records check) must be completed satisfactorily before any candidate can be offered a position with the CSU. Failure to satisfactorily complete the background check may affect the application status of applicants or continued employment of current CSU employees who apply for the position.Duties: Provide telephone and in-person support for campus technology services to students and other members of the campus community.Qualifications:Experience with iOS, Android, Windows 10 and 11, OS X. Experience with accessing and using the CSUN Portal, campus e-mail, Zoom, and Canvas. Excellent interpersonal skills. (Desirable, not required) Familiarity with myCSUNBox, Microsoft Office, WiFi configuration, VPN, troubleshooting skills.. Schedule and Hours:10 - 20 hours/week. Department ID:10062 Classification:Class 1: Under direction of a lead or appropriate administrator, responsible for routine and non-routine tasks that can be easily learned or may require some on-the-job training or special skill. Positions at this level may require some discretion in judgment and decision-making as well as experience, training or education. Positions required to perform entry level duties should be placed at the bottom of the range while positions requiring some discretion, judgment and experience be placed above the minimum of the range. Wage:$17Length of FWS Employment:November through May 15. Any employment beyond May 15 is outside of the FWS program. May be renewed annually based on FWS eligibility.",
+      "pubDate": "Mon, 2 Nov 2026 19:12:00 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11849050/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
+      "employer": "CSUN 10052 - Information Technology",
+      "expiresAt": "12/03/2026"
+    },
     {
       "id": "gid://handshake/Job/11834183",
       "feedId": "handshake_feed_14261",
