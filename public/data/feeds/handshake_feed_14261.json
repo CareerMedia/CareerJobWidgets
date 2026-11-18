@@ -1,7 +1,19 @@
 {
   "feedId": "handshake_feed_14261",
-  "syncedAt": "2026-11-17T21:55:56.738Z",
+  "syncedAt": "2026-11-18T21:38:21.031Z",
   "jobs": [
+    {
+      "id": "gid://handshake/Job/11952672",
+      "feedId": "handshake_feed_14261",
+      "feedName": "On-Campus Jobs",
+      "title": "Student Project Assistant at CSUN 10101 - DNCBE Office of the Dean",
+      "description": "Employer: CSUN 10101 - DNCBE Office of the Dean Expires: 12/14/2026 Student Project Assistant – EntrepreneurshipDr. Scillitoe is recruiting a student assistant to support a special interdisciplinary project integrating entrepreneurship, artificial intelligence (AI), and geographic information systems (GIS). The selected student will serve as the entrepreneurship student lead while collaborating with student assistants who have AI and GIS expertise.This position is ideal for a CSUN student who understands how to evaluate business opportunities, develop a Business Model Canvas, and create a business plan—and who enjoys training, mentoring, and coordinating student project teams.ResponsibilitiesTeach students how to develop and use the Business Model Canvas and evidence based methods to evaluate and refine project ideas.Lead and mentor interdisciplinary student teams working on projects that integrate entrepreneurship with AI and GIS.Coordinate with AI and GIS student assistants to support integrated project activities.Track student participation, project milestones, and deliverables.Assist with project administration, including scheduling, communications, attendance, documentation, and preparation of reports or presentations.Support the development of training materials, activities, and project resources.Participate in project showcases, presentations, and related CSUN entrepreneurship activities.Maintain regular communication with the faculty project team and promptly communicate project needs or concerns.Required QualificationsCurrently enrolled as a student at California State University, Northridge.Working knowledge of the Business Model Canvas and business-plan development.Ability to explain entrepreneurship concepts clearly to students with different levels of experience.Strong communication, organization, teamwork, and follow-through skills.Ability to work effectively in an interdisciplinary environment with students working in AI, GIS, business, and related fields.Ability to attend required in-person activities during the designated Spring Break week.Availability for 5-10 hours per week, with additional hours required during Spring Break.Preferred QualificationsCompletion of CSUN ENT 101 and/or ENT 310.Experience developing a business model, business plan, startup concept, or entrepreneurial project.Experience mentoring, tutoring, training, or leading student teams.Familiarity with customer discovery, market research, value propositions, lean startup methods, or innovation.Interest in applying entrepreneurship to technology, sustainability, public-sector, community, or industry challenges.Experience with project coordination, event support, or administrative tasks.Application MaterialsApplicants should submit:ResumeBrief statement describing their entrepreneurship experience and interest in the projectExamples of relevant coursework, projects, business plans, or entrepreneurial activitiesClass schedule and availability, including Spring Break availabilityNames and contact information for two references, if requestedSend questions and application materials to: Dr. Scillitoe joanne.scillitoe@csun.edu",
+      "pubDate": "Fri, 13 Nov 2026 21:37:21 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11952672/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/14261/public.rss?token=Ul37g1RH9P7PbDeKoYiQelDYS0bjpMZZeHXi2vsL1rLl3f-aB076bg",
+      "employer": "CSUN 10101 - DNCBE Office of the Dean",
+      "expiresAt": "12/14/2026"
+    },
     {
       "id": "gid://handshake/Job/11922621",
       "feedId": "handshake_feed_14261",
