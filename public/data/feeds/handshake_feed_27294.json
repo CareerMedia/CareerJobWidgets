@@ -1,6 +1,6 @@
 {
   "feedId": "handshake_feed_27294",
-  "syncedAt": "2026-11-18T21:38:21.031Z",
+  "syncedAt": "2026-11-19T21:52:31.740Z",
   "jobs": [
     {
       "id": "gid://handshake/Job/11948807",
@@ -49,6 +49,18 @@
       "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
       "employer": "CSUN 10308 - Office of Community Engagement",
       "expiresAt": "12/12/2026"
+    },
+    {
+      "id": "gid://handshake/Job/11638577",
+      "feedId": "handshake_feed_27294",
+      "feedName": "On-Campus Federal Work Study Jobs",
+      "title": "FWS: CJS Office Support Assistant 2027 at CSUN 10451 - Criminology and Justice Studies",
+      "description": "Employer: CSUN 10451 - Criminology and Justice Studies Expires: 12/23/2026 The department of Criminology and Justice Studies (CJS) is looking to hire a few student assistants, preference to CJS majors, who qualify for federal work study.Duties: The office work is in the CJS Dept. office, SH 165. Student assistants will answer phone calls, assist walk-ins, help create fliers, do recurring duties and help faculty and staff with projects and events. The student assistants help ensure CJS can assist students, faculty and staff and help provide good customer service. Ability to work with diverse population of student/parents and staff, in person, over the phone and through email. Ability to work with and maintain confidential information. Looking for positive energetic students willing to be helpful.Qualifications: Full time undergraduate or in last semester, prefer CJS major, or in the college of CSBS. Students must be in good academic standing.Hours: May work up to 20 hours per week and must be available Monday through Friday between 8 a.m. and 5 p.m. (around the applicant's class schedule). Must be willing to work during fall and spring semesters.Classification: IDEPT ID: 10451Pay Rate: $ 16.90 per hour, paid monthly.Length of FWS Appointment: Fall through May 15. Any employment beyond May 15 is outside of the FWS program. . If the student graduates in fall, the appointment ends 12/24/2025. May be renewed annually based on FWS eligibility.",
+      "pubDate": "Sun, 11 Oct 2026 16:16:01 +0000",
+      "applyUrl": "https://csun.joinhandshake.com/jobs/11638577/share_preview",
+      "sourceUrl": "https://csun.joinhandshake.com/external_feeds/27294/public.rss?token=f28CbJXfjIV06P6JVXUClJ5o9fH02sk7d9pNKC_KIzFRGqrVyu0aYQ",
+      "employer": "CSUN 10451 - Criminology and Justice Studies",
+      "expiresAt": "12/23/2026"
     },
     {
       "id": "gid://handshake/Job/11599446",
